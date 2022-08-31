@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h4>商品新規登録</h4>
+　　　　<%= form_with model: @item, url: '/admin/items', method: :post do |f| %>
+
+          <div class="form-group">
+            <label for="item_name">商品名　</label>
+            <%= f.text_field :name, :placeholder =>"商品名", size:"25" %>
+          </div>
+
+  　　      <div class="form-group">
+             <label for="item_introduction">商品説明</label>
+             <%= f.text_area :introduction, :placeholder =>"ここに説明文を記載します", size:"25" %>
+          </div>
+
+          <div class="form-group">
+             <label for="item_genre_id">ジャンル</label>
+             <%= f.collection_select :genre_id, @genres, :id, :name, {include_blank: '--選択してください--'}  %>
+          </div>
+
+          <div class="form-group">
+             <label for="item_introduction">税抜価格</label>
+             <%= f.text_field :price, :placeholder =>"1000", size:"25" %>円
+          </div>
+
+          <div class="form-group">
+            <%= f.label :販売ステータス %>
+            <%= f.radio_button :is_active, '販売中' %>
+            <%= f.label :is_active, '販売中', value: 1 %>
+            <%= f.radio_button :is_active, '販売停止中' %>
+            <%= f.label :is_active, '販売停止中', value: 0 %>
+          </div>
+
+          <div class="center-block">
+            <%= f.submit "新規登録",class:"btn btn-success" %>
+          </div>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</div>

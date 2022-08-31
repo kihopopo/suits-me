@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 px-sm-0 mx-auto">
+    <h4>商品一覧</h4><%= link_to "＋",new_admin_item_path,class:"btn btn-sm btn-light" %>
+     <table class="table table-hover table-inverse">
+    　 <thead>
+        <tr class="table-secondary">
+          <th>商品ID</th>
+          <th>商品名 </th>
+          <th>税抜価格</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </tr>
+        <% @items.each_with_index do |item,i| %>
+          <tr>
+           <td>
+            <%= i+1 %>
+           </td>
+            <td>
+             <%= link_to item.name, admin_item_path(item.id) %>
+            </td>
+            <td>
+             <%= item.price %>
+            </td>
+            <td>
+             <%= item.genre.name %>
+            </td>
+            <td>
+             <%= item.is_active %>
+            </td>
+           </tr>
+          </thead>
+           <%end%>
+        </table>
+        </div>
+      </div>
+    </div>
