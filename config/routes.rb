@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :genres
+    resources :items
   end
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
