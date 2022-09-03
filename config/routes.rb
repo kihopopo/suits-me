@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'search' => 'homes#search', as: 'search'
     resources :genres
     resources :items
+    resources :customers
   end
+
   devise_for :customers,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
