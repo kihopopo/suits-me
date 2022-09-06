@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get 'search' => 'homes#search', as: 'search'
     resources :genres
     resources :items
-    resources :customers
+    resources :cus
   end
 
   devise_for :customers,skip: [:passwords], controllers: {
