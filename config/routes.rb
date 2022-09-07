@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   namespace :admin do
     get 'search' => 'homes#search', as: 'search'
     resources :genres
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   scope module: :public do
       root 'homes#top'
   end
+  
+  get 'customers/my_page' => 'public/customers#show'
+  get 'customers/information/edit' => 'public/customers#edit'
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"

@@ -15,6 +15,7 @@
 .container p {
   position: absolute;
   color: black;
+  font-family: 'Kosugi Maru', sans-serif;
   font-weight: bold;
   font-size: 3em;
   top: 20%;
