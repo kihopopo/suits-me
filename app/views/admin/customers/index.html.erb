@@ -22,7 +22,11 @@
             <%= customer.email %>
            </td>
            <td>
-            <%= customer.is_deleted  %>
+            <% if customer.is_deleted? %>
+			   <span class="text-active">有効</span>	
+			<% else %>
+			   <span class="text-invalid">退会済み</span>
+			<% end %>
            </td>
          </tr>
         <%end%>

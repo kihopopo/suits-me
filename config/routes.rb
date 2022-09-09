@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  
+
   namespace :admin do
     get 'search' => 'homes#search', as: 'search'
     resources :genres
     resources :items
-    resources :cus
+    resources :customers
   end
 
   devise_for :customers,skip: [:passwords], controllers: {
@@ -15,9 +15,12 @@ Rails.application.routes.draw do
   scope module: :public do
       root 'homes#top'
   end
-  
+
   get 'customers/my_page' => 'public/customers#show'
   get 'customers/information/edit' => 'public/customers#edit'
+  patch 'customers/information' => 'public/customers#update'
+  get 'customers/unsubscribe' => 'public/customers#unsubscribe'
+  patch 'customers/withdraw' => 'public/customers#withdraw'
 
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"

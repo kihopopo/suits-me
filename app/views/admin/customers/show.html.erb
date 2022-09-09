@@ -28,14 +28,18 @@
     　                   <td>電話番号</td>
     　                   <td><%= @customer.telephone_number %> </td>
     　               </tr>
-    　               
+
                     <tr>
     　                   <td>メールアドレス</td>
     　                   <td><%= @customer.email %> </td>
     　               </tr>
     　                <tr>
     　                   <td>会員ステータス</td>
-    　                   <td><%= @customer.is_deleted %> </td>
+    					<td><% if @customer.is_deleted? %>
+    						  <span class="text-active">有効	</span>
+    					    <% else %>
+    						  <span class="text-invalid">退会済み</span>
+    					    <% end %> </td>
     　               </tr>
                 </tbody>
             </table>
