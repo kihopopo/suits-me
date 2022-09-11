@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'addresses/index'
+    get 'addresses/edit'
+  end
   namespace :admin do
     get 'search' => 'homes#search', as: 'search'
     resources :genres
@@ -13,7 +17,8 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-      root 'homes#top'
+    root 'homes#top'
+    resources :addresses
   end
 
   get 'customers/my_page' => 'public/customers#show'
