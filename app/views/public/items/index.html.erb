@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>商品一覧</h2>
+    <div class = "row">
+           <% @items.each do |item| %>
+           <div class = "col-md-3">
+             <div class = "card">
+             <div class = "card-body">
+             <div><%= item.name %></div>
+             <div><%=item.add_tax_price.to_s(:delimited) %>円</div>
+             </div>
+             </div>
+           </div>
+         <% end %>
+  </div>
+</div>
