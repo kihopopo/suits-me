@@ -5,6 +5,9 @@
            <div class = "col-md-3">
              <div class = "card">
              <div class = "card-body">
+             <%= link_to item_path(item.id) do %>
+             <%= image_tag item.get_image(200,200) %>
+             <% end %>
              <div><%= item.name %></div>
              <div><%=item.add_tax_price.to_s(:delimited) %>円</div>
              </div>

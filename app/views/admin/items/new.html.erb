@@ -10,8 +10,8 @@
           <table class="admin_item_info item_form">
       			<thead>
       				<tr>
-      					<th></th>
-      					<th></th>
+      					<th><label for="item_image">商品画像</label></th>
+      					<th><%= f.file_field :image, accept:"image/*" %></th>
       				</tr>
       			</thead>
       			<tbody>
@@ -32,7 +32,7 @@
       					<td><%= f.number_field :price %>円</td>
       				</tr>
       				<tr>
-      					<td><%= f.label :sales_status, "販売ステータス" %></td>
+      					<td><%= f.label :i, "販売ステータス" %></td>
       					<td class="select_field">
       						<%= f.radio_button :is_active, true %>
       						<%= f.label :is_active, "販売中", class: "text-active" %>
