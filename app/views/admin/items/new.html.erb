@@ -9,6 +9,17 @@
          <div class="flex">
           <table class="admin_item_info item_form">
       			<thead>
+      			  <tr>
+
+      			      <div class="field">
+  <%= f.label :tags %><br />
+  <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
+  <%= b.label { b.check_box + b.text } %>
+  <% end %>
+</div>
+
+
+      			  </tr>
       				<tr>
       					<th><label for="item_image">商品画像</label></th>
       					<th><%= f.file_field :image, accept:"image/*" %></th>
