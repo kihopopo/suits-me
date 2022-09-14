@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  
+
   namespace :admin do
+    get '/' => 'homes#top'
     get 'search' => 'homes#search', as: 'search'
     resources :genres
     resources :items
     resources :customers
+    resources :orders
   end
 
   devise_for :customers,skip: [:passwords], controllers: {
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    root 'homes#top'
     resources :addresses
     resources :items
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
@@ -23,6 +24,8 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+  root to: "public/homes#top"
+  get '/about' => 'public/homes#about'
   get 'customers/my_page' => 'public/customers#show'
   get 'customers/information/edit' => 'public/customers#edit'
   patch 'customers/information' => 'public/customers#update'

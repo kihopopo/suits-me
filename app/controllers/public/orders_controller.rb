@@ -3,8 +3,9 @@ class Public::OrdersController < ApplicationController
     if current_customer.cart_items.size == 0
       redirect_to cart_items_path
     else
-    @order = Order.new
-    @customer = current_customer
+      @order = Order.new
+      @customer = current_customer
+      @payments = Order.payment_methods
     end
   end
 

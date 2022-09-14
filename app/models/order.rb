@@ -4,6 +4,8 @@ class Order < ApplicationRecord
   def shipping_cost
   800
   end
-  enum payment_method: { credit_card: 0, transfer: 1 }
+
+  enum payment_method: { クレジットカード: 0, 銀行振込: 1 }
+
 end
 
