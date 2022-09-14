@@ -4,14 +4,14 @@
     <h4>商品一覧</h4>
     <h3 class="text-right">
 			  <%= link_to "+", new_admin_item_path, class:"btn btn-sm btn-light" %>
-		  </h3>
+		</h3>
+     <%= render 'form', items: @items %>
      <table class="table table-hover table-inverse">
     　 <thead>
         <tr class="table-secondary">
           <th>商品ID</th>
           <th>商品名 </th>
           <th>税抜価格</th>
-          <th>ジャンル</th>
           <th>ステータス</th>
         </tr>
         <% @items.each_with_index do |item,i| %>
@@ -24,9 +24,6 @@
             </td>
             <td>
              <%= item.price %>
-            </td>
-            <td>
-             <%= item.genre.name %>
             </td>
             <td>
              <% if item.is_active? %>
@@ -42,3 +39,5 @@
         </div>
       </div>
     </div>
+
+

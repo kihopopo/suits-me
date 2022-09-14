@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+  
   namespace :admin do
     get 'search' => 'homes#search', as: 'search'
     resources :genres
@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     root 'homes#top'
     resources :addresses
     resources :items
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+    resources :cart_items
+    post '/orders/confirm' => 'orders#confirm'
+    get '/orders/complete' => 'orders#complete'
+    resources :orders
   end
 
   get 'customers/my_page' => 'public/customers#show'

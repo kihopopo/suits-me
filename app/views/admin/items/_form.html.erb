@@ -1,0 +1,17 @@
+<%= form_with(model: @item, local: true) do |form| %>
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="field">
+  <%= form.label :tags %><br />
+  <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
+  <%= b.label { b.check_box + b.text } %>
+  <% end %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
