@@ -12,11 +12,11 @@
       			  <tr>
 
       			      <div class="field">
-  <%= f.label :tags %><br />
-  <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
-  <%= b.label { b.check_box + b.text } %>
-  <% end %>
-</div>
+                  <%= f.label :tags %><br />
+                  <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
+                  <%= b.label { b.check_box + b.text } %>
+                  <% end %>
+                  </div>
 
 
       			  </tr>

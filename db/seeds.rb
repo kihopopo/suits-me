@@ -8,3 +8,12 @@
 Admin.create!(
    email: 'test@test.com',
    password: '00OYMWMG4')
+
+Tag.create!(
+   [
+      { name: 'イエベ春'},
+      { name: 'ブルベ夏'},
+      { name: 'イエベ秋'},
+      { name: 'ブルベ冬'}
+   ]
+)
