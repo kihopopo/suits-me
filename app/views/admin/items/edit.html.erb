@@ -8,7 +8,7 @@
 
  <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class="col-md-10 px-sm-0 mx-auto">
 　　　　<%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
 　　　　  <div class="form-group">
             <label for="item_name">商品画像</label>
@@ -16,22 +16,24 @@
 　　　　  </div>
 
           <div class="form-group">
-            <label for="item_name">商品名　</label>
+            <label for="item_name">商品名　　　　</label>
             <%= f.text_field :name %>
           </div>
 
   　　      <div class="form-group">
-             <label for="item_introduction">商品説明</label>
+             <label for="item_introduction">商品説明　　　</label>
              <%= f.text_area :introduction %>
           </div>
 
-          <!--<div class="form-group">-->
-          <!--   <label for="item_genre_id">ジャンル</label>-->
-          <!--   <%#= f.collection_select :genre_id, @genres, :id, :name, {include_blank: '--選択してください--'} %>-->
-          <!--</div>-->
+          <div class="form-group">
+             <label for="item_tag_ids">タグ　　　　　</label>
+              <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
+             <%= b.label { b.check_box + b.text } %>
+            　<% end %>
+          </div>
 
           <div class="form-group">
-             <label for="item_introduction">税抜価格</label>
+             <label for="item_introduction">税抜価格　　　</label>
              <%= f.text_field :price, :placeholder =>"1000" %>円
           </div>
 
