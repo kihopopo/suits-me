@@ -28,7 +28,7 @@
           <div class="form-group">
              <label for="item_tag_ids">タグ　　　　　</label>
               <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
-             <%= b.label { b.check_box + b.text } %>
+            　 <%= b.label { b.check_box + b.text } %>
             　<% end %>
           </div>
 

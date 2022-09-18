@@ -53,6 +53,11 @@ class Public::OrdersController < ApplicationController
    end
   end
 
+  def confirm_error
+    flash[:danger]="不正な操作が行われました。もう一度やり直してください。"
+    redirect_to new_order_path
+  end
+
   private
 
   def order_params

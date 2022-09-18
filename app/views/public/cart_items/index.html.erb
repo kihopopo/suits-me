@@ -52,7 +52,7 @@
       </table>
 
      <% if current_customer.cart_items.size != 0 %>
-     <%=link_to new_order_path, class:"btn btn-sm btn-success" do %>情報入力画面に進む
+     <%=link_to new_order_path, class:"btn btn-sm btn-success", data: { 'turbolinks': false } do %>情報入力画面に進む
      <% end %>
      <% end %>
     </div

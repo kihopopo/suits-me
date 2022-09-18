@@ -3,16 +3,10 @@
     <div class="col-sm-12 col-md-8 col-lg-9 px-5 px-sm-0 mx-auto">
       <h3>注文情報入力</h3>
       <strong>支払い方法</strong>
+      <div>
         <%= form_with model: @order, url:orders_confirm_path, method: :post do |f| %>
-         <% @payments.each do |payment| %>
-          <% if payment[1] == 0 %>
-           <%= f.radio_button :payment_methods, payment[1], :checked => true %>
-          <% else %>
-           <%= f.radio_button :payment_methods, payment[1] %>
-          <% end %>
-          <%= f.label :payment_methods, payment[0] %>
-         <% end %>
-
+        <%= f.collection_radio_buttons :payment_method, Order.payment_methods_i18n, :first, :last %>
+        </div>
         <strong>お届け先</strong>
         <table class = "table">
          <tr>
