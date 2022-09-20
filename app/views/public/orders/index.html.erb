@@ -18,13 +18,13 @@
             <%= order[:created_at].strftime("%Y/%m/%d") %>
            </td>
             <td>
-             <p>〒<%= order.postal_code %></p>
-             <p><%= order.address %></p>
-             <p><%= order.name %></p>
+             <div>〒<%= order.postal_code %></div>
+             <div><%= order.address %></div>
+             <div><%= order.name %></div>
             </td>
             <td>
              <% order.items.each do |item| %>
-             <p><%= item.name %></p>
+             <div><%= item.name %></div>
              <% end %>
             </td>
             <td>

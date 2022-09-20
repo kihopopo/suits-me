@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :items
     resources :customers
     resources :orders
+    resources :order_details
   end
 
   devise_for :customers,skip: [:passwords], controllers: {
