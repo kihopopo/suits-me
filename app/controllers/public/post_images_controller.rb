@@ -6,7 +6,7 @@ class Public::PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params)
     @post_image.customer_id = current_customer.id
-    @post_image.save
+    @post_image.save!
     redirect_to post_images_path
   end
 
@@ -16,7 +16,7 @@ class Public::PostImagesController < ApplicationController
 
   def show
     @post_image = PostImage.find(params[:id])
-    @post_comment = PostComment.new
+    #@post_comment = PostComment.new
   end
 
   def destroy
@@ -28,7 +28,7 @@ class Public::PostImagesController < ApplicationController
    private
 
   def post_image_params
-    params.require(:post_image).permit(:shop_name, :image, :caption)
+    params.require(:post_image).permit(:shop_name, :image, :caption, :name, :price)
   end
 
 end
