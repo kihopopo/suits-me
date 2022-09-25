@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     get '/orders/confirm' => 'orders#confirm_error'
     get '/orders/complete' => 'orders#complete'
     resources :orders
-    resources :post_images
+    resources :post_images do
+    resources :post_comments
+    end
   end
 
   root to: "public/homes#top"
