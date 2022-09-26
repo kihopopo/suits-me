@@ -25,7 +25,8 @@ Rails.application.routes.draw do
     get '/orders/complete' => 'orders#complete'
     resources :orders
     resources :post_images do
-    resources :post_comments
+      resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
     end
   end
 
