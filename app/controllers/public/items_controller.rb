@@ -6,6 +6,8 @@ class Public::ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
+    @comments = @tweet.comments
+    @comment = Comment.new
   end
 
   private
