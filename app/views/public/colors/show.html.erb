@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-8 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light p-4 mb-0">診断結果</h5>
+      <div class="form-body p-4">
+        <div class="intoro">
+            <p>あなたのパーソナルカラーは…</p>
+        </div>
+        <div class="tweet-container">
+            <div class="tweet">
+                <% if @color.question == "1111" %>
+                <h6>ブルベ夏</h6>
+
+                <% elsif @color.question == "1112" %>
+                <h6>ブルベ冬</h6>
+
+                <% elsif @color.question == "1121" %>
+                <h6>ブルベ夏</h6>
+
+                <% elsif @color.question == "1122" %>
+                <h6>ブルベ冬</h6>
+
+                <% elsif @color.question == "1211" %>
+                <p>...last question...</p>
+                <p>水色の服が似合う</p>
+                <h6>YES→ブルベ夏　NO→イエベ春</h6>
+
+                <% elsif @color.question == "1212" %>
+                <p>...last question...</p>
+                <p>茶色の服が似合う</p>
+                <h6>YES→イエベ秋　NO→ブルベ冬</h6>
+
+                <% elsif @color.question == "1221" %>
+                <p>...last question...</p>
+                <p>水色の服が似合う</p>
+                <h6>YES→ブルベ夏　NO→イエベ春</h6>
+
+                <% elsif @color.question == "1222" %>
+                <p>...last question...</p>
+                <p>茶色の服が似合う</p>
+                <h6>YES→イエベ秋　NO→ブルベ冬</h6>
+
+                <% elsif @color.question == "2111" %>
+                <p>...last question...</p>
+                <p>水色の服が似合う</p>
+                <h6>YES→ブルベ夏　NO→イエベ春</h6>
+
+                <% elsif @color.question == "2112" %>
+                <p>...last question...</p>
+                <p>茶色の服が似合う</p>
+                <h6>YES→イエベ秋　NO→ブルベ冬</h6>
+
+                <% elsif @color.question == "2121" %>
+                <p>...last question...</p>
+                <p>水色の服が似合う</p>
+                <h6>YES→ブルベ夏　NO→イエベ春</h6>
+
+                <% elsif @color.question == "2122" %>
+                <p>...last question...</p>
+                <p>茶色の服が似合う</p>
+                <h6>YES→イエベ秋　NO→ブルベ冬</h6>
+
+                <% elsif @color.question == "2211" %>
+                <h6>イエベ春</h6>
+
+                <% elsif @color.question == "2212" %>
+                <h6>イエベ秋</h6>
+
+                <% elsif @color.question == "2221" %>
+                <h6>イエベ春</h6>
+
+                <% elsif @color.question == "2222" %>
+                <h6>イエベ秋</h6>
+
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

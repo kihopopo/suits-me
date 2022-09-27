@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get '/orders/confirm' => 'orders#confirm_error'
     get '/orders/complete' => 'orders#complete'
     resources :orders
+    resources :colors
     resources :post_images do
       resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
