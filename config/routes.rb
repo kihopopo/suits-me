@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :addresses
-    resources :items
+    resources :items do
+      resources :comments, only: [:create, :edit, :destroy]
+    end
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
     resources :cart_items
     post '/orders/confirm' => 'orders#confirm'

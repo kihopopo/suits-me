@@ -6,6 +6,8 @@
           <%= form_for(@color, class: 'form-horizontal', role: 'form') do |f| %>
             <div class="container-sindan">
                 <div class="row">
+                    <table class = "table">
+                    <tr>
                     <div class="col-12">
                         <p>Question1. 目の色は…</p>
                     </div>
@@ -15,7 +17,9 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>瞳が薄い茶色か茶色で白目が黄色い</p>
                     </div>
+                    </tr>
 
+                    <tr>
                     <div class="col-12">
                         <p>Question2. 手首から浮き出る血管の色は…</p>
                     </div>
@@ -25,7 +29,9 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>緑色</p>
                     </div>
+                    </tr>
 
+                    <tr>
                     <div class="col-12">
                         <p>Question3. あなたの印象に近いのは…</p>
                     </div>
@@ -35,7 +41,9 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>大人っぽい、しっかりしている、クール</p>
                     </div>
+                    </tr>
 
+                    <tr>
                     <div class="col-12">
                         <p>Question4. どちらかといえば…</p>
                     </div>
@@ -45,6 +53,8 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>落ち着いたカラーが似合う</p>
                     </div>
+                    </tr>
+                    </table>
                 </div>
             </div>
             <div class="sindanbotan">
@@ -55,4 +65,3 @@
     </div>
   </div>
 </div>
-　　　　
