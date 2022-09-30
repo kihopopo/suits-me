@@ -1,8 +1,5 @@
 <div class="container">
   <%= form_with  url: items_path, method: :get, local: true do |f| %>
-  <%#= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
-  <%#= b.label { b.check_box + b.text } %>
-  <%# end %>
   <% @tags.each do |tag| %>
     <%= check_box '', 'tag_ids[]', {checked: params[:tag_ids]&.include?("#{tag.id}")}, tag.id, nil %><%= tag.name %>
   <% end %>

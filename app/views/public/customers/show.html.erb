@@ -1,7 +1,4 @@
-<section class="inner">
-<% if flash[:notice] %>
-<p class="text-active"><%= flash[:notice] %></p>
-<% end %>
+<%= flash[:notice] %>
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-9 px-5 px-sm-0 mx-auto">
@@ -31,6 +28,10 @@
             <tr>
       　     <td>メールアドレス</td>
       　     <td><%= @customer.email %> </td>
+      　     </tr>
+      　     <tr>
+      　     <td>ユーザーネーム</td>
+      　     <td><%= @customer.username %> </td>
       　     </tr>
           </tbody>
         </table>

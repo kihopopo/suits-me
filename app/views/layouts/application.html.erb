@@ -50,7 +50,7 @@
                  <%= link_to "会員一覧", admin_customers_path, class:'nav-link text-light' %>
                </li>
                 <li class="nav-item">
-                 <%= link_to "注文履歴一覧", admin_orders_path, class:'nav-link text-light' %>
+                 <%= link_to "注文履歴一覧", admin_path, class:'nav-link text-light' %>
                </li>
                <li class="nav-item">
                  <%= link_to "ジャンル一覧", admin_genres_path, class:'nav-link text-light' %>
@@ -80,24 +80,27 @@
     <%= yield %>
     </main>
     <footer>
-    <!--<footer class="bg-dark text-white pt-5 pb-4">-->
-    <!--  <div class="container">-->
-    <!--    <div class="row no-gutters">-->
-    <!--      <div class="col-md-4">-->
-    <!--      </div>-->
-    <!--      <div class="col-md-8">-->
-    <!--        <h6 class="text-white mt-2 mb-3">Link</h6>-->
-    <!--        <ul class="p-0 list-unstyled">-->
-    <!--          <li>-->
-    <!--            <a href="" title="About" class="text-white-50">会社概要</a>-->
-    <!--          </li>-->
-    <!--          <li>-->
-    <!--            <a href="" title="License informations" class="text-white-50">プライバシーポリシー</a>-->
-    <!--          </li>-->
-    <!--        </ul>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--  </div>-->
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <!--<div class="row">-->
+        <!--  <div class="col-md-4">-->
+        <!--  </div>-->
+        <!--  <div class="col-md-8">-->
+            <!--<ul class="p-0 list-unstyled">-->
+            <% if customer_signed_in? %>
+             <div class="text-left">
+              <%= link_to "ホーム", post_images_path, class:"btn btn-sm btn-light" %>
+             </div>
+
+             <div class="text-center">
+              <%= link_to "+", new_post_image_path, class:"btn btn-sm btn-light" %>
+             </div>
+
+            <% end %>
+            <!--</ul>-->
+        <!--  </div>-->
+        <!--</div>-->
+      </div>
     </footer>
   </body>
 </html>

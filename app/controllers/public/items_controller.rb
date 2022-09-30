@@ -17,6 +17,12 @@ class Public::ItemsController < ApplicationController
     @comment = Comment.new
   end
 
+  # def destroy
+  #   comment = Comment.find(params[:id])
+  #   comment.destroy
+  #   redirect_to item_path(@item)
+  # end
+
   private
 
   def item_params
