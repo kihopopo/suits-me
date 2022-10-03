@@ -72,10 +72,10 @@
       </nav>
     </header>
     <main class="mb-auto">
-    <% flash.each do |key, value| %>
-    <p class="alert alert-<%= key %>">
-      <%= value %>
-    </p>
+    <% flash.each do |name, msg| %>
+     <p class="alert alert-<%= bootstrap_class_for(name) %>" >
+       <%= msg %>
+     </p>
     <% end %>
     <%= yield %>
     </main>
