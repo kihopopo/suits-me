@@ -16,7 +16,7 @@ class Public::ItemsController < ApplicationController
     @comments = @item.comments
     @comment = Comment.new
   end
-  
+
   def edit
     @comment = Comment.find(params[:id])
     if @comment.customer == current_customer
@@ -24,12 +24,6 @@ class Public::ItemsController < ApplicationController
     else
       redirect_to items_path
     end
-  end
-
-  def destroy
-    comment = Comment.find(params[:id])
-    comment.destroy
-    redirect_to item_path(@item)
   end
 
   private

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-  get "search" => "searches#search"
+  get "search" => "public/searches#search"
   namespace :admin do
     get '/' => 'homes#top'
-    get 'search' => 'homes#search', as: 'search'
+    # get 'search' => 'homes#search', as: 'search'
     resources :genres
-    resources :items
+    resources :items do
+      resources :comments, only: [:destroy]
+    end
     resources :customers
     resources :orders
     resources :order_details

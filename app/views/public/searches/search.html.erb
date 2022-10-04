@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>検索結果</h2>
+  <hr>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card">
+          <%= image_tag item.get_image(500, 500), class: 'card-img-top img-fluid' %>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= item.name %>
+            </h5>
+            <%= item.introduction %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

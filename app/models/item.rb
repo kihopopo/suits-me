@@ -25,4 +25,19 @@ class Item < ApplicationRecord
     end
     image.variant(resize_to_limit: [width, height]).processed
   end
+
+  # 商品検索
+  #   wordは[検索ワード] / methodは[検索手法]
+  def self.search(word, method)
+    # TODO: 最終実行結果が戻り値になるので変数に入れなくても良い
+    # TODO: CASEに関する補足 : https://www.javadrive.jp/ruby/if/index9.html
+    case method
+    when 'perfect_match' then # 完全一致
+      Item.where("name LIKE ? OR introduction LIKE ?", "#{word}", "#{word}")
+    when 'partial_match' then # 部分一致
+      Item.where("name LIKE ? OR introduction LIKE ?", "%#{word}%", "%#{word}%")
+    else # 何も一致処理がなかった場合の保険
+      Item.all
+    end
+  end
 end

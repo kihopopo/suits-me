@@ -12,6 +12,12 @@ class Public::CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to item_path(params[:item_id])
+  end
+
  private
  def comment_params
      params.require(:comment).permit(:content, :rate)

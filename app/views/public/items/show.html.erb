@@ -47,7 +47,7 @@
 
                 <div class="text-right">
                     <% if c.customer == current_customer %>
-                    <%=link_to item_path(@item.id), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" do %>
+                    <%=link_to item_comment_path(@item, c.id), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" do %>
                      Destroy
                     <%end%>
                     <%end%>

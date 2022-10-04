@@ -11,7 +11,7 @@
 
   <body class="d-flex flex-column vh-100">
       <header>
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand header-logo" href="/">
             <span>SuitsMe</span>
@@ -28,42 +28,42 @@
             <ul class="navbar-nav ml-auto">
               <% if customer_signed_in? %>
                <li class="nav-item">
-                 <%= link_to "マイページ", customers_my_page_path, class:'nav-link text-light' %>
+                 <%= link_to "マイページ", customers_my_page_path, class:'nav-link' %>
                </li>
                <li class="nav-item">
-                 <%= link_to "商品一覧", items_path, class:'nav-link text-light' %>
+                 <%= link_to "商品一覧", items_path, class:'nav-link' %>
                </li>
                <li class="nav-item">
-                 <%= link_to "カート", cart_items_path, class:'nav-link text-light' %>
+                 <%= link_to "カート", cart_items_path, class:'nav-link' %>
                </li>
                <li>
-                 <%= link_to '投稿フォーム', post_images_path, class:'nav-link text-light'%>
+                 <%= link_to '投稿フォーム', post_images_path, class:'nav-link'%>
                </li>
                <li class="nav-item">
-                 <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:'nav-link text-light' %>
+                 <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:'nav-link' %>
                </li>
               <% elsif admin_signed_in? %>
                 <li class="nav-item">
-                 <%= link_to "商品一覧", admin_items_path, class:'nav-link text-light' %>
+                 <%= link_to "商品一覧", admin_items_path, class:'nav-link' %>
                </li>
                 <li class="nav-item">
-                 <%= link_to "会員一覧", admin_customers_path, class:'nav-link text-light' %>
+                 <%= link_to "会員一覧", admin_customers_path, class:'nav-link' %>
                </li>
                 <li class="nav-item">
-                 <%= link_to "注文履歴一覧", admin_path, class:'nav-link text-light' %>
+                 <%= link_to "注文履歴一覧", admin_path, class:'nav-link' %>
                </li>
                <li class="nav-item">
-                 <%= link_to "ジャンル一覧", admin_genres_path, class:'nav-link text-light' %>
+                 <%= link_to "ジャンル一覧", admin_genres_path, class:'nav-link' %>
                </li>
                 <li>
-                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
+                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to "新規登録", new_customer_registration_path, class: 'nav-link text-light' %>
+                  <%= link_to "新規登録", new_customer_registration_path, class: 'nav-link' %>
                 </li>
                 <li>
-                  <%= link_to "ログイン", new_customer_session_path, class: 'nav-link text-light' %>
+                  <%= link_to "ログイン", new_customer_session_path, class: 'nav-link' %>
                 </li>
               <% end %>
             </ul>
@@ -71,8 +71,7 @@
              <div class="search_form">
                <%= form_with url: search_path, local: true, method: :get do |f| %>
                 <%= f.text_field :word %>
-                <%= f.select :range, options_for_select([['Customer'], ['Genre']]) %>
-                <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+                <%= f.select :method, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
                 <%= f.submit "検索", class: "btn btn-primary" %>
                <% end %>
              </div>
@@ -83,34 +82,33 @@
     </header>
     <main class="mb-auto">
     <% flash.each do |name, msg| %>
-     <p class="alert alert-<%= bootstrap_class_for(name) %>" >
+     <p class="alert alert-<%= bootstrap_class_for(name) %> m-0" >
        <%= msg %>
      </p>
     <% end %>
     <%= yield %>
     </main>
-    <footer>
-    <footer class="bg-dark text-white pt-5 pb-4">
-      <div class="container">
-        <!--<div class="row">-->
-        <!--  <div class="col-md-4">-->
-        <!--  </div>-->
-        <!--  <div class="col-md-8">-->
-            <!--<ul class="p-0 list-unstyled">-->
+    <footer class="py-3">
+        <div class="container">
             <% if customer_signed_in? %>
-             <div class="text-left">
-              <%= link_to "ホーム", post_images_path, class:"btn btn-sm btn-light" %>
-             </div>
+                <div class="text-center">
+                    <%= link_to post_images_path, class: 'mr-3' do %>
+                        <i class="fas fa-home fa-2x"></i>
+                    <% end %>
 
-             <div class="text-center">
-              <%= link_to "+", new_post_image_path, class:"btn btn-sm btn-light" %>
-             </div>
+                    <%= link_to new_post_image_path, class: 'mr-3' do %>
+                        <i class="fas fa-plus-square fa-2x"></i>
+                    <% end %>
 
+                    <%= link_to root_path do %>
+                        <i class="fas fa-user-circle fa-2x"></i>
+                    <% end %>
+                </div>
             <% end %>
-            <!--</ul>-->
-        <!--  </div>-->
-        <!--</div>-->
-      </div>
+            <div class="text-center">
+                <small>&copy; 2022 ABC Inc.</small>
+            </div>
+        </div>
     </footer>
   </body>
 </html>
