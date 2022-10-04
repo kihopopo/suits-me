@@ -21,7 +21,7 @@
           <p class="card-text">アイテム名：<%= post_image.name %></p>
            <p class="card-text">税込価格：<%= post_image.price %>円</p>
           <p class="card-text">説明：<%= post_image.caption %></p>
-          <span><i class="fas fa-customer"></i> By <%= post_image.customer.username %> ｜ </span>
+          <span><i class="fas fa-user"></i> By <%= post_image.customer.username %> ｜ </span>
           <span><%= link_to "#{post_image.post_comments.count} コメント", post_image_path(post_image.id), class:"text-dark" %></span>
         </div>
       </div>

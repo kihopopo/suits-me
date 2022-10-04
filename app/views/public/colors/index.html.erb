@@ -1,13 +1,11 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-8 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">パーソナルカラー診断</h5>
+      <h5 class="text-center bg-light p-4 mb-0">パーソナルカラー診断<i class="fas fa-paint-brush"></i></h5>
       <div class="form-body p-4">
           <%= form_for(@color, class: 'form-horizontal', role: 'form') do |f| %>
             <div class="container-sindan">
-                <div class="row">
-                    <table class = "table">
-                    <tr>
+                <div class="row mb-4 border-bottom border-dark">
                     <div class="col-12">
                         <p>Question1. 目の色は…</p>
                     </div>
@@ -17,9 +15,8 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>瞳が薄い茶色か茶色で白目が黄色い</p>
                     </div>
-                    </tr>
-
-                    <tr>
+                </div>
+                <div class="row mb-4 border-bottom border-dark">
                     <div class="col-12">
                         <p>Question2. 手首から浮き出る血管の色は…</p>
                     </div>
@@ -29,9 +26,8 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>緑色</p>
                     </div>
-                    </tr>
-
-                    <tr>
+                </div>
+                <div class="row mb-4 border-bottom border-dark">
                     <div class="col-12">
                         <p>Question3. あなたの印象に近いのは…</p>
                     </div>
@@ -41,9 +37,8 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>大人っぽい、しっかりしている、クール</p>
                     </div>
-                    </tr>
-
-                    <tr>
+                </div>
+                <div class="row mb-4 border-bottom border-dark">
                     <div class="col-12">
                         <p>Question4. どちらかといえば…</p>
                     </div>
@@ -53,14 +48,12 @@
                     <div class="col-6">
                         <p><%= f.check_box :question, {multiple: true}, "2", nil %>落ち着いたカラーが似合う</p>
                     </div>
-                    </tr>
-                    </table>
                 </div>
             </div>
-            <div class="sindanbotan">
+            <div class="text-center pt-4">
                 <%= f.submit "診断",class:"btn btn-info w-25" %>
+            <% end %>
             </div>
-　　　　　<% end %>
 　　　</div>
     </div>
   </div>

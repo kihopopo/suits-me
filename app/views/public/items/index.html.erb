@@ -3,9 +3,8 @@
   <% @tags.each do |tag| %>
     <%= check_box '', 'tag_ids[]', {checked: params[:tag_ids]&.include?("#{tag.id}")}, tag.id, nil %><%= tag.name %>
   <% end %>
-  <%= f.submit "検索",class:"btn btn-success" %>
+  <%= f.submit "検索",class:"btn btn-dark" %>
   <% end %>
-  <h2>商品一覧</h2>
     <div class = "row">
            <% @items.each do |item| %>
            <div class = "col-md-3">

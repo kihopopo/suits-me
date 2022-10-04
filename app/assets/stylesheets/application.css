@@ -1,5 +1,5 @@
 .header-logo{
-  color: #365291 !important;
+  color: #120D0A !important;
   font-family: 'Lobster', cursive;
   padding: 0.7rem;
 }
@@ -63,6 +63,6 @@ footer {
 header a,
 footer a,
 footer a:hover {
-  color: #365291;
+  color: #1F428F;
   text-decoration: none;
 }
