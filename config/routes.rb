@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get "search" => "searches#search"
   namespace :admin do
     get '/' => 'homes#top'
     get 'search' => 'homes#search', as: 'search'

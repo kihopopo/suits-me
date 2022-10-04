@@ -25,6 +25,8 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @comments = @item.comments
+    @comment = Comment.all
   end
 
   def edit
@@ -38,10 +40,16 @@ class Admin::ItemsController < ApplicationController
     redirect_to admin_items_path(@item.id)
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to admin_items_path
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :genre_id, :price, :is_active, :image, tag_ids: [])
+    params.require(:item).permit(:name, :introduction, :genre_id, :price, :is_active, :image, :comment , tag_ids: [])
   end
 
 end
