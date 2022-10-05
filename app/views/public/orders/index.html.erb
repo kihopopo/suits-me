@@ -1,46 +1,48 @@
 <div class="container">
   <div class="row">
-   <h4>注文履歴一覧</h4>
-    <div class="col-md-12 px-5 px-sm-0 mx-auto">
-     <table class="table table-hover table-inverse">
-      <thead>
-        <tr class="table-secondary">
-          <th>注文日</th>
-          <th>配送先 </th>
-          <th>注文商品</th>
-          <th>支払金額</th>
-          <th>ステータス</th>
-          <th>注文詳細</th>
-        </tr>
-        <% @orders.each do |order| %>
-          <tr>
-           <td>
-            <%= order[:created_at].strftime("%Y/%m/%d") %>
-           </td>
+   <div class="col-md-10 px-sm-0 mx-auto">
+    <section class="inner">
+     <h3>Order detail</h3>
+      <table class="table table-hover table-inverse">
+       <thead>
+         <tr class="table-secondary">
+           <th>注文日</th>
+           <th>配送先 </th>
+           <th>注文商品</th>
+           <th>支払金額</th>
+           <th>ステータス</th>
+           <th>注文詳細</th>
+         </tr>
+         <% @orders.each do |order| %>
+           <tr>
             <td>
-             <div>〒<%= order.postal_code %></div>
-             <div><%= order.address %></div>
-             <div><%= order.name %></div>
+             <%= order[:created_at].strftime("%Y/%m/%d") %>
             </td>
-            <td>
-             <% order.items.each do |item| %>
-             <div><%= item.name %></div>
+             <td>
+              <div>〒<%= order.postal_code %></div>
+              <div><%= order.address %></div>
+              <div><%= order.name %></div>
+             </td>
+             <td>
+              <% order.items.each do |item| %>
+              <div><%= item.name %></div>
+              <% end %>
+             </td>
+             <td>
+              <%= order.total_payment %>
+             </td>
+             <td>
+              <%= order.status_i18n %>
+             </td>
+             <td>
+              <%=link_to order_path(order), class:"btn btn-sm btn-primary" do %>表示する
              <% end %>
-            </td>
-            <td>
-             <%= order.total_payment %>
-            </td>
-            <td>
-             <%= order.status_i18n %>
-            </td>
-            <td>
-             <%=link_to order_path(order), class:"btn btn-sm btn-primary" do %>表示する
+             </td>
+            </tr>
             <% end %>
-            </td>
-           </tr>
-           <% end %>
-          </thead>
-         </table>
+           </thead>
+          </table>
+         </section>
         </div>
       </div>
     </div>

@@ -2,59 +2,50 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <section class="inner">
-      	<h4 class="section-ttl">商品新規登録</h4>
-      </section>
-
+      	<h3 class="section-ttl">商品新規登録</h3>
         <%= form_with model: @item, url: '/admin/items', method: :post do |f| %>
-         <div class="flex">
-          <table class="admin_item_info item_form">
-      			<thead>
-      			  <tr>
-      			      <div class="field">
-                  <%= f.label :tags %><br />
-                  <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
-                    <%= b.label { b.check_box + b.text } %>
-                  <% end %>
-                  </div>
-      			  </tr>
-      				<tr>
-      					<th><label for="item_image">商品画像</label></th>
-      					<th><%= f.file_field :image, accept:"image/*" %></th>
-      				</tr>
-      			</thead>
-      			<tbody>
-      				<tr>
-      					<td><%= f.label :name, "商品名" %></td>
-      					<td><%= f.text_field :name, :placeholder =>"商品名", size:"25", class:"form-control" %></td>
-      				</tr>
-      				<tr>
-      					<td><%= f.label :introduction, "商品説明" %></td>
-      					<td><%= f.text_area :introduction, :placeholder =>"ここに説明文を記載します", size:"25", class:"form-control" %></td>
-      				</tr>
-      				<!--<tr>-->
-      				<!--	<td><%#= f.label :genre_id, "ジャンル" %></td>-->
-      				<!--	<td class="select_field"><%#= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: '--選択してください--'} %></td>-->
-      				<!--</tr>-->
-      				<tr>
-      					<td><%= f.label :price, "税抜価格" %></td>
-      					<td><%= f.number_field :price %>円</td>
-      				</tr>
-      				<tr>
-      					<td><%= f.label :is_active, "販売ステータス" %></td>
-      					<td class="select_field">
-      						<%= f.radio_button :is_active, true %>
-      						<%= f.label :is_active, "販売中", class: "text-active" %>
-      						<%= f.radio_button :is_active, false %>
-      						<%= f.label :is_active, "販売停止中", class: "text-invalid" %>
-      					</td>
-      				</tr>
-      			</tbody>
-      		</table>
-        		<div class="flex align-center pl5">
-        			<%= f.submit "新規登録", class: "btn btn-success" %>
-        		</div>
-      	  </div>
-      <% end %>
+
+      		<div class="field pt-3">
+            <strong><%= f.label :tags, "タグ" %></strong>
+            <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
+            <%= b.label { b.check_box + b.text } %>
+            <% end %>
+          </div>
+
+          <div class="field pt-3">
+      			<strong><label for="item_image">商品画像</label></strong>
+      			<%= f.file_field :image, accept:"image/*" %>
+      		</div>
+
+          <div class="field pt-3">
+            <strong><%= f.label :name, "商品名" %></strong>
+      			<%= f.text_field :name, :placeholder =>"商品名", class:"form-control" %>
+          </div>
+
+          <div class="field pt-3">
+      			<strong><%= f.label :introduction, "商品説明" %></strong>
+      			<%= f.text_area :introduction, :placeholder =>"ここに説明文を記載します", size:"25", class:"form-control" %>
+          </div>
+
+      		<div class="field pt-3">
+      			<strong><%= f.label :price, "税抜価格" %></strong>
+      			<%= f.number_field :price %>円
+      		</div>
+
+          <div class="select_field pt-3">
+            <strong><%= f.label :is_active, "販売ステータス" %></strong>
+      			<%= f.radio_button :is_active, true %>
+      			<%= f.label :is_active, "販売中", class: "text-active" %>
+      			<%= f.radio_button :is_active, false %>
+      			<%= f.label :is_active, "販売停止中", class: "text-invalid" %>
+      		</div>
+
+      		<div class="text-left pt-3">
+        		<%= f.submit "新規登録", class: "btn btn-success" %>
+            <% end %>
+          </div>
+
+      </section>
     </div>
   </div>
 </div>

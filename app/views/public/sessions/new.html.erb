@@ -1,40 +1,27 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col-10">
-       <h2>Log in</h2>
+   <div class = "col-md-4"></div>
+    <div class="col-md-8">
+     <section class="inner">
+       <h2 class="section-ttl">Log in</h2>
+
        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-       <table class = "table">
-        <tr>
-         <td>
          <div class="field">
           <%= f.label :メールアドレス %><br />
-         </td>
-         <td>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",size: "50" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",size: "30" %>
          </div>
-         </td>
-        </tr>
-        <tr>
-         <td>
+
          <div class="field">
           <%= f.label :パスワード %><br />
-         </td>
-         <td>
-          <%= f.password_field :password, autocomplete: "current-password",size: "50"  %>
+          <%= f.password_field :password, autocomplete: "current-password",size: "30"  %>
          </div>
-         </td>
-        </tr>
-        <tr>
-         <td>
-         </td>
-         <td>
-          <div class="actions">
-          <%= f.submit "ログイン",class:"btn btn-info w-25" %>
+
+          <div class="actions pt-4">
+          <%= f.submit "ログイン",class:"btn btn-info" %>
           </div>
-         </td>
-        </tr>
-       </table>
-      <% end %>
-      </div>
+       <% end %>
+      </section>
+     </div>
     </div>
   </div>
+ </div>

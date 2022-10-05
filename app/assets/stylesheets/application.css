@@ -8,7 +8,7 @@
   background: url(/images/01.jpeg) center / cover;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 
@@ -34,7 +34,7 @@
 }
 
 section {
-    padding: 100px 0;
+    padding: 60px 0;
 }
   /*.top-button {*/
   /*position: absolute;*/
@@ -65,4 +65,8 @@ footer a,
 footer a:hover {
   color: #1F428F;
   text-decoration: none;
+}
+
+.text-muted-des {
+    text-align: left;
 }
