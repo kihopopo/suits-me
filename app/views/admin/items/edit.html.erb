@@ -1,16 +1,10 @@
-<div class = "container">
-     <div class = "row">
-         <div class = "col-3">
-             <h4>商品編集</h4>
-         </div>
-     </div>
- </div>
-
  <div class="container">
   <div class="row">
-    <div class="col-md-10 px-sm-0 mx-auto">
+    <div class="col-sm-12 col-md-8 col-lg-9 px-5 px-sm-0 mx-auto">
+     <section class="innner">
 　　　　<%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
-　　　　  <div class="form-group">
+　　　　<h3>商品編集</h3>
+　　　　  <div>
             <label for="item_name">商品画像</label>
 　　　　  　<%= f.file_field :image,class:"form-control-file item_image", id:"item_image", accept:"image/*" %>
 　　　　  </div>
@@ -50,6 +44,7 @@
           </div>
         <% end %>
       </form>
+      </section>
     </div>
   </div>
 </div>

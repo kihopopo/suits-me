@@ -7,61 +7,42 @@
         <%= form_with model: @order, url:orders_confirm_path, method: :post do |f| %>
         <%= f.collection_radio_buttons :payment_method, Order.payment_methods_i18n, :first, :last %>
        </div>
+        <div class="mt-4"></div>
         <strong>お届け先</strong>
-        <table class = "table">
-         <tr>
-           <td>
+        <div>
             <%= f.radio_button :select_address, '1' %>
             <%= f.label :select_address, 'ご自身の住所',value: 1 %>
-           </td>
-         </tr>
-         <tr>
-           <td>
+        </div>
+        <div class="form-group mb-5">
             <%= @customer.address %>
-           </td>
-         </tr>
-         <tr>
-           <td>
             <%= @customer.full_name %>
-           </td>
-         </tr>
-          <tr>
-           <td>
+        </div>
+        <div>
             <%= f.radio_button :select_address, '2' %>
             <%= f.label :select_address, '登録済住所から選択',value: 2 %>
-           </td>
-          </tr>
-          <tr>
-           <td><%= f.select :address_id, options_from_collection_for_select(@customer.addresses, :id, :address_display) %></td>
-          </tr>
-          <tr>
-           <td>
+        </div>
+        <div class = "form-group mb-5">
+           <%= f.select :address_id, options_from_collection_for_select(@customer.addresses, :id, :address_display) %>
+        </div>
+        <div>
             <%= f.radio_button :select_address, '3' %>
             <%= f.label :select_address, '新しいお届け先',value: 3 %>
-           </td>
-          </tr>
-          <tr>
-           <td>
-             <%= f.label :postal_code,"郵便番号(ハイフンなし)" %>
-           </td>
-           <td>
+        </div>
+        <div>
+             <%= f.label :postal_code,"郵便番号（ハイフンなし）" %>
              <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
-           </td>
-          </tr>
-          <tr>
-           <td>住所</td>
-           <td colspan="2">
-           <%= f.text_field :address, autofocus: true, autocomplete: "address",size: "60" %>
-           </td>
-          </tr>
-          <tr>
-      　　　<td>宛名</td>
-      　　　<td><%= f.text_field :name %></td>
-      　　</tr>
-      　</table>
+        </div>
+        <div>
+             <%= f.label :address,"住所　　　　　　　　　　" %>
+             <%= f.text_field :address, autofocus: true, autocomplete: "address",size: "60" %>
+        </div>
+        <div>
+             <%= f.label :name,"名前　　　　　　　　　" %>
+      　      <%= f.text_field :name, autofocus: true %>
+      　</div>
 
       　<div class="container">
-          <%= f.submit "確認画面へ進む",class:"btn btn-primary" %>
+          <%= f.submit "確認画面へ進む",class:"btn btn-info" %>
           <% end %>
         </div>
      </div>

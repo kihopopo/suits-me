@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get "search" => "public/searches#search"
   namespace :admin do
     get '/' => 'homes#top'
-    # get 'search' => 'homes#search', as: 'search'
     resources :genres
     resources :items do
       resources :comments, only: [:destroy]
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :addresses
+    resources :colors
     resources :items do
       resources :comments, only: [:create, :edit, :destroy]
     end
@@ -29,7 +29,6 @@ Rails.application.routes.draw do
     get '/orders/confirm' => 'orders#confirm_error'
     get '/orders/complete' => 'orders#complete'
     resources :orders
-    resources :colors
     resources :post_images do
       resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]

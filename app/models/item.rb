@@ -1,6 +1,5 @@
 class Item < ApplicationRecord
   has_one_attached :image
-  #belongs_to :genre
   has_many :cart_items
   has_many :item_tags
   has_many :tags, through: :item_tags
@@ -14,7 +13,7 @@ class Item < ApplicationRecord
   end
 
   def with_tax_price
-    (price * 1.1).ceil
+    (price * 1.10).ceil
     # ceilは切り上げ、floorが切り捨て、roundが四捨五入
   end
 
