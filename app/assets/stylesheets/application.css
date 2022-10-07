@@ -26,29 +26,16 @@
 }
 
 .text-primary {
-    color: #fed136 !important;
+  color: #fed136 !important;
 }
 
 .fa-inverse {
-    color: #fed136;
+  color: #fed136;
 }
 
 section {
-    padding: 60px 0;
+  padding: 60px 0;
 }
-  /*.top-button {*/
-  /*position: absolute;*/
-  /*display: inline-block;*/
-  /*font: normal normal 300 1.3em 'Open Sans';*/
-  /*margin: 5px;*/
-  /*color: #fed136;*/
-  /*border: 1px solid #fed136;*/
-  /*border-radius: 100px;*/
-  /*padding: 0.5em 2em;*/
-  /*background-size: 200% 100%;*/
-  /*background-image: linear-gradient(to right, transparent 50%, #fed136 50%);*/
-  /*transition: background-position 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,color 0.5s ease 0s,background-color 0.5s ease;*/
-  /*}*/
 
 /*************
  * ヘッダー & フッター
@@ -59,6 +46,7 @@ header,
 footer {
   background-color: #DFC27E;
 }
+
 
 footer{
   width: 100%;
@@ -74,5 +62,6 @@ footer a:hover {
 }
 
 .text-muted-des {
-    text-align: left;
+  text-align: left;
 }
+
