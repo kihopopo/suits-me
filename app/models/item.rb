@@ -7,13 +7,8 @@ class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 
-
   def add_tax_price
-    (self.price*1.10).round
-  end
-
-  def with_tax_price
-    (price * 1.10).ceil
+    (price * 1.10).floor
     # ceilは切り上げ、floorが切り捨て、roundが四捨五入
   end
 

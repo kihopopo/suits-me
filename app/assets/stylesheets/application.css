@@ -60,6 +60,12 @@ footer {
   background-color: #DFC27E;
 }
 
+footer{
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+}
+
 header a,
 footer a,
 footer a:hover {
