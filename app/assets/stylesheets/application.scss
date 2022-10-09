@@ -12,17 +12,20 @@
 }
 
 
-.container b {
-  position: absolute;
-  color: black;
-  font-family: 'Kosugi Maru', sans-serif;
-  font-weight: bold;
-  font-size: 3em;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
+.container {
+  .title-suits_me {
+    position: absolute;
+    color: black;
+    font-family: 'Klee One', cursive;
+    font-weight: bold;
+    font-size: 3em;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    text-align: center;
+  }
 }
 
 .text-primary {
@@ -36,13 +39,20 @@
 section {
   padding: 60px 0;
 }
-  .top-button {
-  margin: 5px;
+
+.top-button {
+  font-family: "M PLUS 1p";
+  width: 32vw;
+  font-size: 30px;
   color: #1F428F;
   border: 1px solid #1F428F;
   border-radius: 100px;
-  padding: 1em 15em;
+  padding-top: 10px;
   }
+.top-button:hover{
+  background-color: #1F428F;;
+  color: #fff;
+}
 
 /*************
  * ヘッダー & フッター
@@ -61,7 +71,16 @@ footer{
   bottom: 0;
 }
 
-header a,
+
+.nav-item {
+  a {
+    color: #1f428f96;
+  }
+  a:hover{
+    color: #1F428F;
+  }
+}
+
 footer a,
 footer a:hover {
   color: #1F428F;
@@ -70,4 +89,10 @@ footer a:hover {
 
 .text-muted-des {
   text-align: left;
+}
+
+.container {
+  .title {
+    font-family: "M PLUS 1p";
+  }
 }
