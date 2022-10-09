@@ -18,7 +18,25 @@
         <p class="text-muted text-muted-des">
         <i class="fa fa-check fa-fw"></i>その人の生まれ持った身体の色と雰囲気が<br>似合う色のことである<br>
         <i class="fa fa-check fa-fw"></i>パーソナルカラーは見た目の印象等で決まる<br>
-        <i class="fa fa-check fa-fw"></i>「イエベ春」「ブルベ夏」「イエベ秋」「ブルベ冬」の４パターンに分かれる</p>
+        <i class="fa fa-check fa-fw"></i>「イエベ春」「ブルベ夏」「イエベ秋」「ブルベ冬」の４パターンに分かれる<br>
+        <i class="fa fa-check fa-fw"></i>診断したい方は、
+        　<%= link_to colors_path do %>
+            <i class="fas fa-clipboard-list fa-inverse"></i>
+          <% end %>
+          をクリック</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa-stack-2x text-primary"></i>
+          <%= link_to items_path do %>
+            <i class="fas fas fa-store fa-stack-1x fa-inverse"></i>
+          <% end %>
+        </span>
+        <h4 class="service-heading">商品の購入</h4>
+        <p class="text-muted text-muted-des">
+        <i class="fa fa-check fa-fw"></i>商品一覧から好きな商品が選べて購入ができます<br>
+        <i class="fa fa-check fa-fw"></i>自分のパーソナルカラーで商品を検索できるようにしました<br>
+        <i class="fa fa-check fa-fw"></i>商品を見たい方は、上の黄色のロゴをクリック</p>
       </div>
       <div class="col-md-4">
         <span class="fa-stack fa-4x">
@@ -29,23 +47,10 @@
         </span>
         <h4 class="service-heading">コーディネート投稿</h4>
         <p class="text-muted text-muted-des">
-          <i class="fa fa-check fa-fw"></i>誰もが自分に似合う色でコーディネートをできるように<br>
-          <i class="fa fa-check fa-fw"></i>パーソナルカラーでのコーディネートを発信や共有ができ、おしゃれを楽しめるように<br>
+          <i class="fa fa-check fa-fw"></i>購入した商品でおしゃれを楽しめるように<br>
+          <i class="fa fa-check fa-fw"></i>パーソナルカラーでのコーディネートを発信や共有ができます<br>
           <i class="fa fa-check fa-fw"></i>投稿したい方は、上の黄色のロゴをクリック</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fa-stack-2x text-primary"></i>
-          <%= link_to colors_path do %>
-            <i class="fas fa-clipboard-list fa-stack-1x fa-inverse"></i>
-          <% end %>
-        </span>
-        <h4 class="service-heading">パーソナルカラー診断</h4>
-        <p class="text-muted text-muted-des"><i class="fa fa-check fa-fw"></i>よりおしゃれを楽しめるように作りました<br>
-        <i class="fa fa-check fa-fw"></i>診断したい方は、上の黄色のロゴをクリック</p>
-      </div>
-    </div>
-    <div class="col-lg-12 text-center">
     </div>
   </div>
 </section>

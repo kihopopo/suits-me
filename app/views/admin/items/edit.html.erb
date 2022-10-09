@@ -1,33 +1,34 @@
  <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class="col-sm-10 col-md-6 col-lg-8 px-5 px-sm-0 mx-auto">
      <section class="innner">
        <h3>商品編集</h3>
 　　　　<%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
-　　　　  <div>
-            <label for="item_name">商品画像</label>
-　　　　  　<%= f.file_field :image,class:"form-control-file item_image", id:"item_image", accept:"image/*" %>
-　　　　  </div>
-          <div>
-            <label for="item_name">商品名　　　　</label>
-            <%= f.text_field :name, w- %>
-          </div>
-
-  　　      <div class="form-group">
-             <label for="item_introduction">商品説明　　　</label>
-             <%= f.text_area :introduction %>
-          </div>
-
-          <div class="form-group">
+　　　　  <div class="form-group">
              <label for="item_tag_ids">タグ　　　　　</label>
               <%= collection_check_boxes(:item, :tag_ids, Tag.all, :id, :name) do |b| %>
             　 <%= b.label { b.check_box + b.text } %>
             　<% end %>
           </div>
 
+　　　　  <div>
+            <label for="item_name">商品画像</label>
+　　　　  　<%= f.file_field :image,class:"form-control-file item_image", id:"item_image", accept:"image/*" %>
+　　　　  </div>
+
+          <div>
+            <label for="item_name">商品名　　　　</label>
+            <%= f.text_field :name, size:"25" %>
+          </div>
+
+  　　      <div class="form-group">
+             <label for="item_introduction">商品説明　　　</label>
+             <%= f.text_area :introduction, rows:"3", size:"25" %>
+          </div>
+
           <div class="form-group">
              <label for="item_introduction">税抜価格　　　</label>
-             <%= f.text_field :price, :placeholder =>"1000" %>円
+             <%= f.text_field :price, :placeholder =>"1000", size:"25" %>円
           </div>
 
           <div class="form-group">
