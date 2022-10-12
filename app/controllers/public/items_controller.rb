@@ -1,4 +1,5 @@
 class Public::ItemsController < ApplicationController
+  before_action :authenticate_customer!
   def index
     tag_ids = params[:tag_ids] || [] # [2,4]
     if tag_ids.size > 0

@@ -23,9 +23,9 @@
           </tr>
           <tr>
             <td><strong>注文ステータス</strong></td>
-             <%= form_with model: @order, url: admin_order_path(@order), method: :patch do |f| %>
-            <td><%= f.select :status, Order.statuses_i18n.invert %>
-                <%= f.submit "更新", class:"btn btn-sm btn-success" %></td>
+            　<%= form_with model: @order, url: admin_order_path(@order), method: :patch do |f| %>
+                <td><%= f.select :status, Order.statuses_i18n.invert %>
+            　<%= f.submit "更新", class:"btn btn-sm btn-success" %></td>
             <% end %>
            </tr>
           </thead>
@@ -50,15 +50,15 @@
             <%= order_detail.item.name %>
            </td>
            <td>
-            <%= order_detail.item.with_tax_price %>
+            <%= order_detail.item.add_tax_price %>
            </td>
            <td>
             <%= order_detail.amount %>
            </td>
            <td>
-            <%= order_detail.item.with_tax_price*order_detail.amount %>
+            <%= order_detail.item.add_tax_price*order_detail.amount %>
            </td>
-           <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), method: :patch do |f| %>
+           <%= form_with model: order_detail, url: admin_order_detail_path(order_id: @order.id, id: order_detail.id), method: :patch do |f| %>
             <td><%= f.select :making_status, OrderDetail.making_statuses_i18n.invert %>
                 <%= f.submit "更新", class:"btn btn-sm btn-success" %></td>
             <% end %>

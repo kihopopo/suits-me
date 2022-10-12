@@ -1,4 +1,5 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
   def new
     if current_customer.cart_items.size == 0
       redirect_to cart_items_path
