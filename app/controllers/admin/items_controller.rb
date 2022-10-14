@@ -13,9 +13,11 @@ class Admin::ItemsController < ApplicationController
 
         @item.item_tags.create!(tag_id: tag)
       end
-    end
 
     redirect_to admin_item_path(@item)
+    else
+    render :new
+    end
   end
 
   def index

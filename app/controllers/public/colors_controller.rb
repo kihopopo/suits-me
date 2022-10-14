@@ -10,7 +10,8 @@ class Public::ColorsController < ApplicationController
         flash[:success] = "診断が完了しました"
         redirect_to color_path(@color.id)
     else
-        redirect_to :action => "new"
+        flash[:danger] = "診断ができませんでした。もう一度ご確認ください"
+        render :index
     end
   end
 

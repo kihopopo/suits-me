@@ -46,7 +46,7 @@
            <tr>
            <div class="field">
            <td>
-             <%= f.label :ユーザーネーム %><br />
+             <%= f.label :username, "ユーザーネーム" %><br />
            </td>
            <td>
             <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
@@ -57,7 +57,7 @@
           <tr>
            <div class="field">
            <td>
-             <%= f.label :メールアドレス %><br />
+             <%= f.label :email, "メールアドレス" %><br />
            </td>
            <td>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -85,7 +85,7 @@
           <tr>
            <div class="field">
            <td>
-             <%= f.label :電話番号 %><br />
+             <%= f.label :telephone_number, "電話番号" %><br />
            </td>
            <td>
             <%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number" %>
@@ -96,7 +96,7 @@
           <tr>
            <div class="field">
             <td>
-            <%= f.label :パスワード %>
+            <%= f.label :password, "パスワード" %>
              <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %>文字以上)</em>
             <% end %><br />

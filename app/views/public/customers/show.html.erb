@@ -1,54 +1,52 @@
-<%= flash[:notice] %>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-8 mx-auto">
-        <section class="inner">
-          <h3>My page
-          <%=link_to customers_information_edit_path(@customer), class:"btn btn-sm btn-dark" do %>編集する
-          <% end %>
-          </h3>
-           <table class="table">
-            <tbody>
-        　    <tr>
-        　     <td>氏名</td>
-        　     <td><%= @customer.full_name %></td>
-        　    </tr>
-        　    <tr>
-        　     <td>フリガナ</td>
-        　     <td><%= @customer.full_name_kana %></td>
-        　    </tr>
-        　    <tr>
-        　      <td>郵便番号</td>
-    　　       <td><%= @customer.postal_code %></td>
-        　     </tr>
-        　     <tr>
-        　     <td>住所</td>
-        　     <td><%= @customer.address %> </td>
-        　     </tr>
-              <tr>
-        　     <td>電話番号</td>
-        　     <td><%= @customer.telephone_number %> </td>
-        　     </tr>
-              <tr>
-        　     <td>メールアドレス</td>
-        　     <td><%= @customer.email %> </td>
-        　     </tr>
-        　     <tr>
-        　     <td>ユーザーネーム</td>
-        　     <td><%= @customer.username %> </td>
-        　     </tr>
-            </tbody>
-          </table>
-          <div class = "form-group">
-          <strong>配送先　　</strong><%=link_to addresses_path, class:"btn btn-sm btn-dark" do %>一覧を見る
-          <% end %>
-          </div>
-          <div class = "form-group">
-          <strong>注文履歴　</strong><%=link_to orders_path, class:"btn btn-sm btn-dark" do %>一覧を見る
-          <% end %>
-          </section>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 mx-auto">
+      <section class="inner">
+        <h3>My page
+        <%=link_to customers_information_edit_path(@customer), class:"btn btn-sm btn-dark" do %>編集する
+        <% end %>
+        </h3>
+         <table class="table">
+          <tbody>
+      　    <tr>
+      　     <td>氏名</td>
+      　     <td><%= @customer.full_name %></td>
+      　    </tr>
+      　    <tr>
+      　     <td>フリガナ</td>
+      　     <td><%= @customer.full_name_kana %></td>
+      　    </tr>
+      　    <tr>
+      　      <td>郵便番号</td>
+  　　       <td><%= @customer.postal_code %></td>
+      　     </tr>
+      　     <tr>
+      　     <td>住所</td>
+      　     <td><%= @customer.address %> </td>
+      　     </tr>
+            <tr>
+      　     <td>電話番号</td>
+      　     <td><%= @customer.telephone_number %> </td>
+      　     </tr>
+            <tr>
+      　     <td>メールアドレス</td>
+      　     <td><%= @customer.email %> </td>
+      　     </tr>
+      　     <tr>
+      　     <td>ユーザーネーム</td>
+      　     <td><%= @customer.username %> </td>
+      　     </tr>
+          </tbody>
+        </table>
+        <div class = "form-group">
+        <strong>配送先　　</strong><%=link_to addresses_path, class:"btn btn-sm btn-dark" do %>一覧を見る
+        <% end %>
         </div>
+        <div class = "form-group">
+        <strong>注文履歴　</strong><%=link_to orders_path, class:"btn btn-sm btn-dark" do %>一覧を見る
+        <% end %>
+        </section>
       </div>
     </div>
   </div>
-</section>
+</div>

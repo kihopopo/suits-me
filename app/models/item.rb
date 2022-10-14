@@ -6,6 +6,11 @@ class Item < ApplicationRecord
   has_many :order_details
   has_many :comments, dependent: :destroy
 
+  validates :name, presence: true
+  validates :introduction, presence: true
+  validates :tag_ids, presence: true
+  validates :price, presence: true
+  validates :is_active, presence: true
 
   def add_tax_price
     (price * 1.10).floor

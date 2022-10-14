@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
    <div class="col-lg-8 mt-5">
-    <!--<section class="inner">-->
      <h3>注文情報確認</h3>
       <table class="table table-hover table-inverse">
       <thead>
@@ -20,7 +19,7 @@
              <%= image_tag cart_item.item.get_image(50,50) %><%= cart_item.item.name %>
             </td>
             <td>
-             <%= cart_item.item.with_tax_price %>
+             <%= cart_item.item.add_tax_price %>
             </td>
             <td>
              <%= cart_item.amount %>
