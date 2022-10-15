@@ -5,12 +5,20 @@
       <strong>支払い方法</strong>
        <div>
         <%= form_with model: @order, url:orders_confirm_path, method: :post do |f| %>
-        <%= f.collection_radio_buttons :payment_method, Order.payment_methods_i18n, :first, :last %>
+        <%#= f.collection_radio_buttons :payment_method, Order.payment_methods_i18n, :first, :last,{ checked: 0 } %>
+        <div>
+          <%= f.radio_button :payment_method, "credit_card", :checked => true %>
+          <%= f.label :payment_method, Order.payment_methods_i18n["credit_card"], value: "credit_card" %>
+        </div>
+        <div>
+          <%= f.radio_button :payment_method, "transfer" %>
+          <%= f.label :payment_method, Order.payment_methods_i18n["transfer"], value: "transfer" %>
+        </div>
        </div>
         <div class="mt-4"></div>
         <strong>お届け先</strong>
         <div>
-            <%= f.radio_button :select_address, '1', :checked => true%>
+            <%= f.radio_button :select_address, '1', :checked => true %>
             <%= f.label :select_address, 'ご自身の住所',value: 1 %>
         </div>
         <div class="form-group mb-5">
