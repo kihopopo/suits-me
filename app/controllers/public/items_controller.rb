@@ -4,9 +4,9 @@ class Public::ItemsController < ApplicationController
     tag_ids = params[:tag_ids] || [] # [2,4]
     if tag_ids.size > 0
       item_ids = ItemTag.where(tag_id: tag_ids).pluck('item_id') # [1, 1]
-      @items = Item.where(id: item_ids.uniq)
+      @items = Item.where(id: item_ids.uniq).page(params[:page]).per(8)
     else
-      @items = Item.all
+      @items = Item.page(params[:page]).per(8)
     end
     @tags = Tag.all
   end

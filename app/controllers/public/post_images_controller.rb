@@ -15,7 +15,7 @@ class Public::PostImagesController < ApplicationController
   end
 
   def index
-    @post_images = PostImage.all
+    @post_images = PostImage.page(params[:page]).per(8)
   end
 
   def show
