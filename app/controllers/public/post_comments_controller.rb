@@ -6,7 +6,6 @@ class Public::PostCommentsController < ApplicationController
     comment.save
     redirect_to post_image_path(post_image)
   end
-  
 
   private
 

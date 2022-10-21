@@ -39,9 +39,6 @@
           <% @post_image.post_comments.each do |post_comment| %>
             <%= post_comment.customer.username %>
             <%= post_comment.comment %><%= post_comment.created_at.strftime('%Y/%m/%d') %>
-             <% if post_comment.customer == current_customer %>
-              <%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
-            <% end %>
           <% end %>
         </div>
         <div>
@@ -50,9 +47,9 @@
             <%= f.submit "送信する" %>
           <% end %>
         </div>
-        <% if @post_image.customer == current_customer %>
-          <%= link_to "投稿を削除", post_image_path(@post_image), method: :delete, class:"btn btn-sm btn-danger" %>
-        <% end %>
+          <% if @post_image.customer == current_customer %>
+            <%= link_to "投稿を削除", post_image_path(@post_image), method: :delete, class:"btn btn-sm btn-danger" %>
+          <% end %>
       </div>
      </div>
    </div>

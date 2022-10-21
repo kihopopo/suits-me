@@ -9,7 +9,7 @@ class Admin::OrdersController < ApplicationController
     @order.update(order_params)
     if @order.status == "paid_up"
        @order.order_details.each do |order_detail|
-        order_detail.update(making_status:"waiting_production")
+        order_detail.update(making_status:"waiting_start")
        end
     end
     redirect_to admin_order_path(@order.id)

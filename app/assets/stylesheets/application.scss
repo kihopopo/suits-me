@@ -5,7 +5,7 @@
 }
 
 .background {
-  background: url(/images/01.jpeg) center / cover;
+  // background: imageurl(/images/01.jpeg) center / cover;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -95,4 +95,8 @@ footer a:hover {
   .title {
     font-family: "M PLUS 1p";
   }
+}
+
+.pagination {
+  justify-content: center;
 }
