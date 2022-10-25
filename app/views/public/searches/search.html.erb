@@ -9,10 +9,11 @@
              <%= image_tag item.get_image(500, 500), class: 'card-img-top img-fluid' %>
              <% end %>
           <div class="card-body">
-            <h5 class="card-title">
-              <%= item.name %>
-            </h5>
-            <%= item.introduction %>
+            <div class="card-title">
+              <h5><%= item.tags.pluck(:name).join(',') %></br></h5>
+              <h6><%= item.name %></br></h6>
+              <i class="fa fa-check fa-fw"></i><%= item.introduction %>
+            </div>
           </div>
         </div>
       </div>

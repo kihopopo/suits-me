@@ -8,6 +8,9 @@
       <table class="table">
        <tbody>
         <tr>
+          <td><%= @item.tags.pluck(:name).join(',') %></td>
+　      </tr>
+        <tr>
           <td><%= @item.name %></td>
       　</tr>
       　<tr>

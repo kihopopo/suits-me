@@ -7,7 +7,6 @@ class PostImage < ApplicationRecord
 
   validates :name, presence: true
   validates :image, presence: true
-  validates :shop_name, presence: true
   validates :price, presence: true
 
 

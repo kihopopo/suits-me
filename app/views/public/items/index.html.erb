@@ -13,8 +13,9 @@
                 <%= link_to item_path(item.id) do %>
                   <%= image_tag item.get_image(200,200) %>
                 <% end %>
+                <div>[<%= item.tags.pluck(:name).join(',') %>]</div>
                 <div><%= item.name %></div>
-                <div><%=item.add_tax_price.to_s(:delimited) %>円</div>
+                <div><%= item.add_tax_price.to_s(:delimited) %>円</div>
                </div>
               </div>
            </div>

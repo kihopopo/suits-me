@@ -15,12 +15,6 @@
           <%= f.file_field :image, accept: "image/*", class: "w-100" %>
           <div class="input-group mb-3 mt-4">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="fas fa-store"></i></span>
-            </div>
-            <%= f.text_field :shop_name, class:"form-control", placeholder:"ショップ名" %>
-          </div>
-          <div class="input-group mb-3 mt-4">
-            <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-tshirt"></i></span>
             </div>
             <%= f.text_field :name, class:"form-control", placeholder:"アイテム名" %>
@@ -31,7 +25,7 @@
             </div>
            <%= f.number_field :price, class:"form-control", placeholder:"税込価格" %>
           </div>
-          <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
+          <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"そのコーディネートが似合うパーソナルカラー名、　コーディネートの特徴などを記載してください" %>
           <hr>
           <%= f.submit '投稿', class:"btn btn-lg btn-block btn-info mt-4" %>
         <% end %>
