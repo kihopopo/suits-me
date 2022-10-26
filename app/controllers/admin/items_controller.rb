@@ -7,16 +7,9 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      params[:item][:tag_ids].shift
-
-      params[:item][:tag_ids].each do |tag|
-
-        @item.item_tags.create!(tag_id: tag)
-      end
-
-    redirect_to admin_item_path(@item)
+      redirect_to admin_item_path(@item)
     else
-    render :new
+      render :new
     end
   end
 
