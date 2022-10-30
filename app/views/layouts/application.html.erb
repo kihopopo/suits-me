@@ -7,7 +7,6 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body class="d-flex flex-column vh-100">
       <header class="sticky-top">
        <nav class="navbar navbar-expand-lg">
@@ -68,14 +67,14 @@
                </ul>
               <% end %>
             <% if customer_signed_in? %>
-             <div class="search_form">
-               <%= form_with url: search_path, local: true, method: :get do |f| %>
-                <%= f.text_field :word %>
-                <%= f.select :method, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
-                 <%= f.select :type, options_for_select([["アイテム","item"], ["タグ","tag"]]) %>
-                <%= f.submit "検索", class: "btn btn-dark" %>
-               <% end %>
-             </div>
+              <div class="search_form">
+                <%= form_with url: search_path, local: true, method: :get do |f| %>
+                  <%= f.text_field :word %>
+                  <%= f.select :method, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %>
+                  <%= f.select :type, options_for_select([["アイテム","item"], ["タグ","tag"]]) %>
+                  <%= f.submit "検索", class: "btn btn-dark" %>
+                <% end %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -92,32 +91,26 @@
     <footer class="py-3">
         <div class="container">
             <% if customer_signed_in? %>
-                <div class="text-center">
-
-                    <%= link_to root_path, class: 'mr-3' do %>
-                        <i class="fas fa-home fa-2x"></i>
-                    <% end %>
-
-                    <%= link_to about_path, class: 'mr-3' do %>
-                        <i class="fas fa-question-circle fa-2x"></i>
-                    <% end %>
-
-                    <%= link_to new_post_image_path, class: 'mr-3' do %>
-                        <i class="fas fa-plus-square fa-2x"></i>
-                    <% end %>
-
-                    <%= link_to post_images_path, class: 'mr-3' do %>
-                        <i class="fas fa-universal-access fa-2x"></i>
-                    <% end %>
-
-                    <%= link_to colors_path do %>
-                        <i class="fas fa-clipboard-list fa-2x"></i>
-                    <% end %>
-
-                </div>
+              <div class="text-center">
+                <%= link_to root_path, class: 'mr-3' do %>
+                    <i class="fas fa-home fa-2x"></i>
+                <% end %>
+                <%= link_to about_path, class: 'mr-3' do %>
+                    <i class="fas fa-question-circle fa-2x"></i>
+                <% end %>
+                <%= link_to new_post_image_path, class: 'mr-3' do %>
+                    <i class="fas fa-plus-square fa-2x"></i>
+                <% end %>
+                <%= link_to post_images_path, class: 'mr-3' do %>
+                    <i class="fas fa-universal-access fa-2x"></i>
+                <% end %>
+                <%= link_to colors_path do %>
+                    <i class="fas fa-clipboard-list fa-2x"></i>
+                <% end %>
+              </div>
             <% end %>
             <div class="text-center">
-                <small>&copy; 2022 ABC Inc.</small>
+              <small>&copy; 2022 ABC Inc.</small>
             </div>
         </div>
     </footer>

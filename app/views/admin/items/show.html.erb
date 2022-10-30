@@ -1,72 +1,68 @@
  <div class = "container">
      <div class = "row">
          <div class = "col-lg-4">
-             <h4>商品詳細</h4>
-             <%= image_tag @item.get_image(300,300) %>
+          <h4>商品詳細</h4>
+          <%= image_tag @item.get_image(300,300) %>
          </div>
-
-
-       <div class="col-lg-8">
-         <table class="table">
-          <tbody>
-           <tr>
-            <td>タグ</td>
-            <td><%= @item.tags.pluck(:name).join(',') %></td>
-    　      </tr>
-           <tr>
-            <td>商品名</td>
-            <td><%= @item.name %></td>
-    　      </tr>
-    　      <tr>
-    　       <td>商品説明</td>
-    　      <td><%= @item.introduction %></td>
-    　     </tr>
-    　      <tr>
-    　       <td>税込価格
-    　         （税抜価格）</td>
-    　       <td><%= @item.add_tax_price.to_s(:delimited) %>(<%= @item.price.to_s(:delimited) %>)円</td>
-    　     </tr>
-    　      <tr>
-    　        <td>販売ステータス</td>
-    　        <td>
-    　         <% if @item.is_active? %>
-         						<span class="text-active">販売中</span>
-         					<% else %>
-         						<span class="text-invalid">販売停止中</span>
-         					<% end %>
-         				</td>
-        　</tr>
-         </tbody>
+         <div class="col-lg-8">
+          <table class="table">
+           <tbody>
+            <tr>
+             <td>タグ</td>
+             <td><%= @item.tags.pluck(:name).join(',') %></td>
+     　      </tr>
+            <tr>
+             <td>商品名</td>
+             <td><%= @item.name %></td>
+     　      </tr>
+     　      <tr>
+     　       <td>商品説明</td>
+     　      <td><%= @item.introduction %></td>
+     　     </tr>
+     　      <tr>
+     　       <td>税込価格
+     　         （税抜価格）</td>
+     　       <td><%= @item.add_tax_price.to_s(:delimited) %>(<%= @item.price.to_s(:delimited) %>)円</td>
+     　     </tr>
+     　      <tr>
+     　        <td>販売ステータス</td>
+     　        <td>
+     　         <% if @item.is_active? %>
+          						<span class="text-active">販売中</span>
+          					<% else %>
+          						<span class="text-invalid">販売停止中</span>
+          					<% end %>
+          				</td>
+         　</tr>
+          </tbody>
          </table>
         <%=link_to edit_admin_item_path(@item.id), class:"btn btn-sm btn-success" do %>
-        編集する
+         編集する
         <%end%>
        </div>
        <div class = "col-lg-12" >
-        <%#= render 'rate_average' %>
            <div class="comment-container">
-             <% @comments.each do |c| %>
+            <% @comments.each do |c| %>
              <div class="pt-2 px-2" style="background-color: #fffffe; border: 2px solid #272343; border-radius: 2px;">
-                   <div class="review-rating" data-score="<%= c.rate %>">評価：<%= c.rate %></div>
-
-                   <div class="text-left">
-                       <p>投稿者：<%= c.customer.username %></p>
-                       <p><%= c.content %></p>
-                   </div>
-
-                   <div class="text-right">
-                    <%=link_to admin_item_comment_path(@item, c.id), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" do %>
-                     Destroy
-                    <%end%>
-                   </div>
-                   <div class="text-right">
-                       <p>投稿日：<%= c.created_at.strftime('%Y/%m/%d') %></p>
-                   </div>
+               <div class="review-rating" data-score="<%= c.rate %>">
+                評価：<%= c.rate %>
                </div>
-
-               <div class="pb-2"></div>
-
-             <% end %>
+               <div class="text-left">
+                   <p>投稿者：<%= c.customer.username %></p>
+                   <p><%= c.content %></p>
+               </div>
+               <div class="text-right">
+                <%=link_to admin_item_comment_path(@item, c.id), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" do %>
+                  Destroy
+                <%end%>
+               </div>
+               <div class="text-right">
+                   <p>投稿日：<%= c.created_at.strftime('%Y/%m/%d') %></p>
+               </div>
+             </div>
+             <div class="pb-2">
+             </div>
+            <% end %>
            </div>
         </div>
      </div>

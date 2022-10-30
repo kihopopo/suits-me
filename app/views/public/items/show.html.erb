@@ -1,37 +1,36 @@
 <div class = "container">
- <div class = "row">
-   <div class = "col-lg-4">
+  <div class = "row">
+    <div class = "col-lg-4">
      <h4>商品詳細</h4>
      <%= image_tag @item.get_image(300,300) %>
-   </div>
-     <div class="col-lg-8">
-      <table class="table">
-       <tbody>
-        <tr>
-        　<td>タグ　　　 :　<%= @item.tags.pluck(:name).join(',') %></td>
-　      </tr>
-        <tr>
-          <td>商品名　　 :　<%= @item.name %></td>
-      　</tr>
-      　<tr>
-      　　<td>商品説明　 :　<%= @item.introduction %></td>
-      　</tr>
-      　<tr>
-    　     <td>税込価格　 :　<%= @item.add_tax_price.to_s(:delimited) %>円</td>
-      　</tr>
-      　<tr>
-      　  <td>
-      　    <%= form_with model: @cart_item, url: '/cart_items', method: :post do |f| %>
-      　    <%= f.hidden_field :item_id, :value => @item.id %>
-      　   <%= f.select :amount, *[1..10] , {include_blank: '個数選択'} %>
-      　   <%= f.submit 'カートに入れる', class:"btn btn-sm btn-success"  %>
-
-      　   <% end %>
-      　  </td>
-      　</tr>
-      </tbody>
-     </table>
     </div>
+      <div class="col-lg-8">
+        <table class="table">
+         <tbody>
+          <tr>
+          　<td>タグ　　　 :　<%= @item.tags.pluck(:name).join(',') %></td>
+  　       </tr>
+          <tr>
+            <td>商品名　　 :　<%= @item.name %></td>
+        　</tr>
+        　<tr>
+        　　<td>商品説明　 :　<%= @item.introduction %></td>
+        　</tr>
+        　<tr>
+      　     <td>税込価格　 :　<%= @item.add_tax_price.to_s(:delimited) %>円</td>
+        　</tr>
+        　<tr>
+        　  <td>
+        　   <%= form_with model: @cart_item, url: '/cart_items', method: :post do |f| %>
+        　   <%= f.hidden_field :item_id, :value => @item.id %>
+        　   <%= f.select :amount, *[1..10] , {include_blank: '個数選択'} %>
+        　   <%= f.submit 'カートに入れる', class:"btn btn-sm btn-success"  %>
+            <% end %>
+        　  </td>
+        　</tr>
+         </tbody>
+        </table>
+      </div>
     <div class = "col-lg-12" >
      <%= render 'rate_average' %>
         <div class="comment-container">
@@ -55,25 +54,18 @@
                     <%end%>
                     <%end%>
                 </div>
-
             </div>
-
             <div class="pb-2"></div>
-
           <% end %>
-
           <%= form_with(model: [@item, @comment], local: true) do |f| %>
-
             <%= f.text_area :content, rows:'5', placeholder: "コメント", class: "form-control form-control-sm" %>
             <div id="rating-form">
                 <label>評価：</label>
                 <%= f.hidden_field :rate, :value => 'score' %>
             </div>
-
             <%= f.submit "投稿する" %>
           <% end %>
         </div>
-
         <script>
             $('#rating-form').raty({
                 starOn: "<%= asset_path('star-on.png') %>",
@@ -82,5 +74,5 @@
             });
         </script>
     </div>
- </div>
+  </div>
 </div>

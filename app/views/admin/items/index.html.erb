@@ -1,43 +1,45 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 px-sm-0 mx-auto">
-      <h3>商品一覧</h3>
-      <h3 class="text-right">
-  	   <%= link_to "＋", new_admin_item_path, class:"btn btn-danger rounded-circle shadow" %>
-  	   </h3>
-       <table class="table table-hover table-inverse">
-         <thead>
-          <tr class="table-secondary">
-            <th>商品ID</th>
-            <th>商品名 </th>
-            <th>税抜価格</th>
-            <th>ステータス</th>
-          </tr>
-          <% @items.each_with_index do |item,i| %>
-            <tr>
-             <td>
-              <%= i+1 %>
-             </td>
-              <td>
-               <%= link_to item.name, admin_item_path(item.id) %>
-              </td>
-              <td>
-               <%= item.price %>
-              </td>
-              <td>
-               <% if item.is_active? %>
-          	    <span class="text-active">販売中</span>
-          	    <% else %>
-          	    <span class="text-invalid">販売停止中</span>
-          	    <% end %>
-              </td>
-             </tr>
-            </thead>
+      <section>
+        <h3>商品一覧</h3>
+        <h3 class="text-right">
+    	   <%= link_to "＋", new_admin_item_path, class:"btn btn-danger rounded-circle shadow" %>
+    	  </h3>
+          <table class="table">
+           <thead>
+            <tr class="table-secondary">
+              <th>商品ID</th>
+              <th>商品名 </th>
+              <th>税抜価格</th>
+              <th>ステータス</th>
+            </tr>
+            <% @items.each_with_index do |item,i| %>
+              <tr>
+               <td>
+                <%= i+1 %>
+               </td>
+                <td>
+                 <%= link_to item.name, admin_item_path(item.id) %>
+                </td>
+                <td>
+                 <%= item.price %>
+                </td>
+                <td>
+                 <% if item.is_active? %>
+            	    <span class="text-active">販売中</span>
+            	    <% else %>
+            	    <span class="text-invalid">販売停止中</span>
+            	    <% end %>
+                </td>
+               </tr>
+              </thead>
              <%end%>
           </table>
-        </div>
-      </div>
-     <%= paginate @items %>
+      </section>
     </div>
+  </div>
+<%= paginate @items %>
+</div>
 
 
