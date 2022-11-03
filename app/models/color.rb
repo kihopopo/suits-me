@@ -1,3 +1,5 @@
 class Color < ApplicationRecord
-  validates :question, presence: true
+
+  validates :question, inclusion: {in: [true,false]}
+
 end

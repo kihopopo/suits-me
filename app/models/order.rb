@@ -3,6 +3,10 @@ class Order < ApplicationRecord
   has_many :order_details
   has_many :items, through: :order_details
 
+  validates :postal_code, presence: true
+  validates :name, presence: true
+  validates :address, presence: true
+
   def shipping_cost
   800
   end
