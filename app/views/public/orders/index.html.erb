@@ -15,7 +15,7 @@
          </tr>
          <% @orders.each do |order| %>
            <tr>
-            <td>
+            <td class="align-middle">
              <%= order[:created_at].strftime("%Y/%m/%d") %>
             </td>
              <td>
@@ -23,18 +23,18 @@
               <div><%= order.address %></div>
               <div><%= order.name %></div>
              </td>
-             <td>
+             <td class="align-middle">
               <% order.items.each do |item| %>
               <div><%= item.name %></div>
               <% end %>
              </td>
-             <td>
+             <td class="text-right align-middle">
               <%= order.total_payment.to_s(:delimited) %>
              </td>
-             <td>
+             <td class="text-center align-middle">
               <%= order.status_i18n %>
              </td>
-             <td>
+             <td class="align-middle">
               <%=link_to order_path(order), class:"btn btn-sm btn-dark" do %>表示する
              <% end %>
              </td>

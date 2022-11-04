@@ -35,22 +35,22 @@
      <table class="table">
       <tr>
         <td>商品合計</td>
-        <td><%= @order.total.to_s(:delimited) %></td>
+        <td class="text-right"><%= @order.total.to_s(:delimited) %></td>
       </tr>
       <tr>
         <td>配送料</td>
-        <td><%= @order.shipping_cost.to_s(:delimited) %></td>
+        <td class="text-right"><%= @order.shipping_cost.to_s(:delimited) %></td>
       </tr>
       <tr>
         <td><strong>ご請求額</strong></td>
-        <td> <%= @order.total_payment.to_s(:delimited) %></td>
+        <td class="text-right"> <%= @order.total_payment.to_s(:delimited) %></td>
       </tr>
      </table>
    </div>
   </div>
  </section>
 
-  <div class = "row">
+  <div class="row">
     <table class="table table-hover table-inverse">
       <thead>
         <tr class="table-secondary">

@@ -36,9 +36,9 @@
       		</div>
       		<div class="select_field pt-3">
             <strong><%= f.label :is_active, "販売ステータス" %></strong>
-      			<%= f.radio_button :is_active, true %>
+      			<%= f.radio_button :is_active, :true %>
       			<%= f.label :is_active, "販売中", class: "text-active" %>
-      			<%= f.radio_button :is_active, false %>
+      			<%= f.radio_button :is_active, :false %>
       			<%= f.label :is_active, "販売停止中", class: "text-invalid" %>
       		</div>
       		<div class="text-left pt-3">
