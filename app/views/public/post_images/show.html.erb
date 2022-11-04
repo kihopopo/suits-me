@@ -22,11 +22,11 @@
           <% end %>
           </p>
           <% end %>
-          <p><i class="fas fa-user-circle"></i>：<%= @post_image.customer.username %></p>
+          <p><i class="fas fa-user-circle"></i>.  <%= @post_image.customer.username %></p>
 
-          <p><i class="fas fa-tshirt"></i> : <%= @post_image.name %></p>
+          <p><i class="fas fa-tshirt"></i>.  <%= @post_image.name %></p>
 
-          <p><i class="fas fa-yen-sign"></i>：<%= @post_image.price %>円</p>
+          <p><i class="fas fa-yen-sign"></i>   <%= @post_image.price.to_s(:delimited) %>円</p>
 
           <p>説明：<%= @post_image.caption %></p>
 

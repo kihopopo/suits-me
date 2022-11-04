@@ -50,13 +50,13 @@
                <%= order_detail.item.name %>
               </td>
               <td>
-               <%= order_detail.item.add_tax_price %>
+               <%= order_detail.item.add_tax_price.to_s(:delimited) %>
               </td>
               <td>
                <%= order_detail.amount %>
               </td>
               <td>
-               <%= order_detail.item.add_tax_price*order_detail.amount %>
+               <%= order_detail.item.add_tax_price.to_s(:delimited)*order_detail.amount %>
               </td>
               <%= form_with model: order_detail, url: admin_order_detail_path(order_id: @order.id, id: order_detail.id), method: :patch do |f| %>
               <td>
@@ -72,15 +72,15 @@
           <table class="table">
             <tr>
               <td><strong>商品合計</strong></td>
-              <td><%= @order.total_payment-@order.shipping_cost %>円</td>
+              <td><%= @order.total.to_s(:delimited) %>円</td>
             </tr>
             <tr>
               <td><strong>送料</strong></td>
-              <td><%= @order.shipping_cost %>円</td>
+              <td><%= @order.shipping_cost.to_s(:delimited) %>円</td>
             </tr>
             <tr>
               <td><strong>請求金額合計</strong></td>
-              <td><strong><%= @order.total_payment %>円</strong></td>
+              <td><strong><%= @order.total_payment.to_s(:delimited) %>円</strong></td>
             </tr>
           </table>
         </div>
