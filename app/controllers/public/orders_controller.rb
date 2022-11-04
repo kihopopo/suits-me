@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-  before_action :authenticate_customer!
+  before_action :correct_customer, only: [:show]
   def new
     if current_customer.cart_items.size == 0
       redirect_to cart_items_path
@@ -64,4 +64,11 @@ class Public::OrdersController < ApplicationController
   def order_params
   params.require(:order).permit(:payment_method, :postal_code, :address, :name, :shipping_cost, :total_payment)
   end
+
+  def correct_customer
+    @order = Order.find(params[:id])
+    @customer = @order.customer
+    redirect_to(admin_path) unless @customer == current_customer
+  end
+
 end
