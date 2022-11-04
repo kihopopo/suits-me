@@ -19,7 +19,7 @@
              <%= image_tag cart_item.item.get_image(50,50) %><%= cart_item.item.name %>
             </td>
             <td>
-             <%= cart_item.item.add_tax_price %>
+             <%= cart_item.item.add_tax_price.to_s(:delimited) %>
             </td>
             <td>
              <%= form_with model: cart_item, url:cart_item_path(cart_item), method: :patch do |f| %>
@@ -28,7 +28,7 @@
              <% end %>
             </td>
             <td>
-             <%= cart_item.subtotal %>
+             <%= cart_item.subtotal.to_s(:delimited) %>
             </td>
             <td>
              <%=link_to cart_item_path(cart_item), method: :delete, class:"btn btn-sm btn-danger" do %>
@@ -47,7 +47,7 @@
            <td></td>
            <td></td>
            <td>合計金額</td>
-           <td><%= @total %></td>
+           <td><%= @total.to_s(:delimited) %></td>
            </tr>
          </thead>
        </table>

@@ -35,15 +35,15 @@
      <table class="table">
       <tr>
         <td>商品合計</td>
-        <td><%= @order.total_payment-@order.shipping_cost %></td>
+        <td><%= @order.total.to_s(:delimited) %></td>
       </tr>
       <tr>
         <td>配送料</td>
-        <td><%= @order.shipping_cost %></td>
+        <td><%= @order.shipping_cost.to_s(:delimited) %></td>
       </tr>
       <tr>
         <td><strong>ご請求額</strong></td>
-        <td> <%= @order.total_payment %></td>
+        <td> <%= @order.total_payment.to_s(:delimited) %></td>
       </tr>
      </table>
    </div>
@@ -65,13 +65,13 @@
             <%= order_detail.item.name %>
           </td>
           <td>
-            <%= order_detail.item.add_tax_price %>
+            <%= order_detail.item.add_tax_price.to_s(:delimited) %>
           </td>
           <td>
            <%= order_detail.amount %>
           </td>
           <td>
-           <%= order_detail.item.add_tax_price*order_detail.amount %>
+           <%= order_detail.item.add_tax_price.to_s(:delimited)*order_detail.amount %>
           </td>
           </tr>
          <% end %>

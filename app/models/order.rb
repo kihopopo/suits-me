@@ -8,7 +8,11 @@ class Order < ApplicationRecord
   validates :address, presence: true
 
   def shipping_cost
-  800
+   800
+  end
+
+  def total
+    total_payment-shipping_cost
   end
 
   enum payment_method: { credit_card: 0, transfer: 1 }
