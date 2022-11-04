@@ -41,15 +41,17 @@
             <td><%= address.postal_code %></td>
             <td><%= address.address %></td>
             <td><%= address.name %></td>
-            <td><%=link_to edit_address_path(address), class:"btn btn-sm btn-success" do %>編集する
+            <td>
+            <%=link_to edit_address_path(address), class:"btn btn-sm btn-success" do %>編集する
             <% end %>
-            <%=link_to address_path(address), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" do %>削除する</td>
+            <%=link_to address_path(address), method: :delete, "data-confirm" => "Are you sure?", class:"btn btn-sm btn-danger" do %>削除する
             <% end %>
+            </td>
            </tr>
           <% end %>
          </tbody>
         </table>
       </section>
-    </div>
+   </div>
   </div>
 </div>
