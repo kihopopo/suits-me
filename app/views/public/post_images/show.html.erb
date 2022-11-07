@@ -23,21 +23,17 @@
           </p>
           <% end %>
           <p><i class="fas fa-user-circle"></i>.  <%= @post_image.customer.username %></p>
-
-          <p><i class="fas fa-tshirt"></i>.  <%= @post_image.name %></p>
-
+　　　　　<p><i class="fas fa-tshirt"></i>.  <%= @post_image.name %></p>
           <p><i class="fas fa-yen-sign"></i>   <%= @post_image.price.to_s(:delimited) %>円</p>
-
           <p>説明：<%= @post_image.caption %></p>
-
         </div>
         <div class="col-md-6">
         <div>
           <p>コメント件数：<%= @post_image.post_comments.count %></p>
           <% @post_image.post_comments.each do |post_comment| %>
-            <%= post_comment.customer.username %>
+            <%= post_comment.customer.username %>&emsp;
             <%= post_comment.comment %>
-            <%= post_comment.created_at.strftime('%Y/%m/%d') %>
+            <p class="text-right"><%= post_comment.created_at.strftime('%Y/%m/%d') %></p></br>
           <% end %>
         </div>
         <div>
