@@ -4,6 +4,7 @@
       <h5 class="text-center bg-light p-3 mb-0"><strong>パーソナルカラー診断</strong><i class="fas fa-paint-brush"></i></h5>
         <div class="form-body p-4">
           <%= form_for(@color, class: 'form-horizontal', role: 'form') do |f| %>
+            <%= f.hidden_field :not_data, :value => "dammy_data" %>　
             <div class="container-sindan">
                 <div class="row mb-4 border-bottom border-dark">
                     <div class="col-12">

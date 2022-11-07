@@ -16,7 +16,3 @@ ja:
         waiting_start: '製作待ち'
         in_production: '製作中'
         completed: '製作完了'
-  activerecord:
-    errors:
-      messages:
-        record_invalid: '不正です'
