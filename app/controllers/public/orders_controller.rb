@@ -38,6 +38,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
+    validate_new_user(params)
     @cart_items = current_customer.cart_items
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
@@ -60,6 +61,12 @@ class Public::OrdersController < ApplicationController
   end
 
   private
+
+  def validate_new_user(params)
+    if params[:order][:select_address] == "3" && (params[:order][:address] == "" ||  params[:order][:postal_code] == "" ||   params[:order][:name] == "" )
+      redirect_to new_order_path, alert: "入力をしていない項目があります。もう一度入力してください。"
+    end
+  end
 
   def order_params
   params.require(:order).permit(:payment_method, :postal_code, :address, :name, :shipping_cost, :total_payment)
