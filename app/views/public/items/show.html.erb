@@ -21,11 +21,16 @@
         　</tr>
         　<tr>
         　  <td>
+        　<% if @item.is_active? %>
         　   <%= form_with model: @cart_item, url: '/cart_items', method: :post do |f| %>
         　   <%= f.hidden_field :item_id, :value => @item.id %>
-        　   <%= f.select :amount, *[1..10] , {include_blank: '個数選択'} %>
-        　   <%= f.submit 'カートに入れる', class:"btn btn-sm btn-success"  %>
+        　   <p>数量を選択して下さい。</p>
+        　   <%= f.select :amount, *[1..10], {selected: 1} %>
+        　   <%= f.submit 'カートに入れる', class:"btn btn-sm btn-dark"  %>
             <% end %>
+          <% else %>
+						<p class="bold">こちらの商品は、現在販売停止中です。</p>
+					<% end %>
         　  </td>
         　</tr>
          </tbody>
