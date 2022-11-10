@@ -17,27 +17,29 @@ ja:
         in_production: '製作中'
         completed: '製作完了'
   activerecord:
-    errors:
-      models:
-        customer:
-          attributes:
-            email:
-              blank: 'を入力してください。'
-            password:
-              blank: 'を入力してください。'
-            first_name:
-              blank: '(姓)を入力してください。'
-            last_name:
-              blank: '(名)を入力してください。'
-            first_name_kana:
-              blank: '(セイ)を入力してください。'
-            last_name_kana:
-              blank: '(メイ)を入力してください。'
-            username:
-              blank: 'を入力してください。'
-            postal_code:
-              blank: 'を入力してください。'
-            address:
-              blank: 'を入力してください。'
-            telephone_number:
-              blank: 'を入力してください。'
+    attributes:
+      customer:
+        username: ユーザーネーム
+      # game:
+      #   text: テキスト
+      #   image: 画像
+      #       email:
+      #         blank: 'を入力してください。'
+      #       password:
+      #         blank: 'を入力してください。'
+      #       first_name:
+      #         blank: '(姓)を入力してください。'
+      #       last_name:
+      #         blank: '(名)を入力してください。'
+      #       first_name_kana:
+      #         blank: '(セイ)を入力してください。'
+      #       last_name_kana:
+      #         blank: '(メイ)を入力してください。'
+      #       username:
+      #         blank: 'を入力してください。'
+      #       postal_code:
+      #         blank: 'を入力してください。'
+      #       address:
+      #         blank: 'を入力してください。'
+      #       telephone_number:
+      #         blank: 'を入力してください。'
