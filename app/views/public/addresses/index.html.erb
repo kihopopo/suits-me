@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-9 px-5 px-sm-0 mx-auto">
       <%= form_with model: @address, method: :post do |f| %>
-      <% if @address.errors.present? %>
+      <% if @address.errors.any? %>
         <% @address.errors.each do |error| %>
-          <p><%= error.message %></p>
+          <p><%= error.full_message %></p>
         <% end %>
       <% end %>
       <section class="inner">

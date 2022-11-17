@@ -4,7 +4,7 @@
       <section class="inner">
         <% if @address.errors.present? %>
           <% @address.errors.each do |error| %>
-            <p><%= error.message %></p>
+            <p><%= error.full_message %></p>
           <% end %>
         <% end %>
         <%= form_with model: @address, url: address_path, method: :patch do |f| %>
