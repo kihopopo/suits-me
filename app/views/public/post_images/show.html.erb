@@ -12,20 +12,19 @@
           <% if @post_image.favorited_by?(current_customer) %>
           <p>
            <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
-           ♥<%= @post_image.favorites.count %>
+           ♥ いいね！ : <%= @post_image.favorites.count %>
           <% end %>
           </p>
           <% else %>
           <p>
            <%= link_to post_image_favorites_path(@post_image), method: :post do %>
-           ♡<%= @post_image.favorites.count %>
+           ♡ いいね！ : <%= @post_image.favorites.count %>
           <% end %>
           </p>
           <% end %>
-          <p><i class="fas fa-user-circle"></i>.  <%= @post_image.customer.username %></p>
+          <p><strong><%= @post_image.customer.username %></strong>　<%= @post_image.caption %></p>
           <p><i class="fas fa-tshirt"></i>.  <%= @post_image.name %></p>
           <p><i class="fas fa-yen-sign"></i>   <%= @post_image.price.to_s(:delimited) %>円</p>
-          <p>説明：<%= @post_image.caption %></p>
         </div>
         <div class="col-md-6">
         <div>
