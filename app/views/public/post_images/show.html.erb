@@ -23,14 +23,12 @@
           </p>
           <% end %>
           <p><strong><%= @post_image.customer.username %></strong>　<%= @post_image.caption %></p>
-          <p><i class="fas fa-tshirt"></i>.  <%= @post_image.name %></p>
-          <p><i class="fas fa-yen-sign"></i>   <%= @post_image.price.to_s(:delimited) %>円</p>
         </div>
         <div class="col-md-6">
         <div>
-          <p>コメント件数：<%= @post_image.post_comments.count %></p>
+          <p class = "text-muted">コメント<%= @post_image.post_comments.count %>件</p>
           <% @post_image.post_comments.each do |post_comment| %>
-            <%= post_comment.customer.username %>&emsp;
+            <strong><%= post_comment.customer.username %></strong>&emsp;
             <%= post_comment.comment %>
             <p class="text-right"><%= post_comment.created_at.strftime('%Y/%m/%d') %>
             <% if post_comment.customer == current_customer %>
