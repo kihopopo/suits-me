@@ -3,47 +3,47 @@
     <div class="col-sm-12 col-md-8 mx-auto">
       <section class="inner">
         <h3>マイページ
-        <%=link_to customers_information_edit_path(@customer), class:"btn btn-sm btn-dark" do %>編集する
+        <%=link_to customers_information_edit_path(@customer), class:"btn btn-sm btn-outline-dark" do %>編集する
         <% end %>
         </h3>
-          <table class="table">
+          <table class="table table-borderless">
             <tbody>
           　   <tr>
-          　     <td>氏名</td>
+          　     <td><b>氏名</b></td>
           　     <td><%= @customer.full_name %></td>
           　   </tr>
           　   <tr>
-          　     <td>フリガナ</td>
+          　     <td><b>フリガナ</b></td>
           　     <td><%= @customer.full_name_kana %></td>
           　   </tr>
           　   <tr>
-          　     <td>郵便番号</td>
+          　     <td><b>郵便番号</b></td>
       　　        <td><%= @customer.postal_code %></td>
           　   </tr>
           　   <tr>
-          　     <td>住所</td>
+          　     <td><b>住所</b></td>
           　     <td><%= @customer.address %> </td>
           　   </tr>
               <tr>
-          　     <td>電話番号</td>
+          　     <td><b>電話番号</b></td>
           　     <td><%= @customer.telephone_number %> </td>
           　   </tr>
               <tr>
-          　     <td>メールアドレス</td>
+          　     <td><b>メールアドレス</b></td>
           　     <td><%= @customer.email %> </td>
           　   </tr>
           　   <tr>
-          　     <td>ユーザーネーム</td>
+          　     <td><b>ユーザーネーム</b></td>
           　     <td><%= @customer.username %> </td>
           　   </tr>
             </tbody>
           </table>
         <div class = "form-group">
-        <strong>配送先　　</strong><%=link_to addresses_path, class:"btn btn-sm btn-dark" do %>一覧を見る
+        配送先　　<%=link_to addresses_path, class:"btn btn-sm btn-dark" do %>一覧を見る
         <% end %>
         </div>
         <div class = "form-group">
-        <strong>注文履歴　</strong><%=link_to orders_path, class:"btn btn-sm btn-dark" do %>一覧を見る
+        注文履歴　<%=link_to orders_path, class:"btn btn-sm btn-dark" do %>一覧を見る
         <% end %>
         </section>
       </div>

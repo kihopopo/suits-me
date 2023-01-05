@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
      <section>
        <h3>会員一覧</h3>
-        <table class="table table-hover table-inverse">
+        <table class="table table-hover table-inverse table-borderless">
        　 <thead>
            <tr class="table-secondary">
              <th>会員ID</th>
@@ -24,9 +24,9 @@
               </td>
               <td>
                <% if customer.is_deleted? %>
-            			   <span class="text-active">退会済み</span>
+            			   <span class="text-dark">退会済み</span>
             			<% else %>
-            			   <span class="text-invalid">有効</span>
+            			   <span class="text-success"><b>有効</b></span>
             			<% end %>
               </td>
            </tr>

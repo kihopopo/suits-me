@@ -5,7 +5,7 @@
           <%= image_tag @item.get_image(300,300) %>
          </div>
          <div class="col-lg-8">
-          <table class="table">
+          <table class="table table-borderless">
            <tbody>
             <tr>
              <td>タグ</td>
@@ -20,23 +20,22 @@
      　      <td><%= @item.introduction %></td>
      　     </tr>
      　      <tr>
-     　       <td>税込価格
-     　         （税抜価格）</td>
+     　       <td>税込価格(税抜価格)</td>
      　       <td><%= @item.add_tax_price.to_s(:delimited) %>(<%= @item.price.to_s(:delimited) %>)円</td>
      　     </tr>
      　      <tr>
      　        <td>販売ステータス</td>
      　        <td>
      　         <% if @item.is_active == true %>
-          						<span class="text-active">販売中</span>
+          						<span class="text-success"><b>販売中</b></span>
           					<% else %>
-          						<span class="text-invalid">販売停止中</span>
+          						<span class="text-dark">販売停止中</span>
           					<% end %>
           				</td>
          　</tr>
           </tbody>
          </table>
-        <%=link_to edit_admin_item_path(@item.id), class:"btn btn-sm btn-success" do %>
+        <%=link_to edit_admin_item_path(@item.id), class:"btn btn-sm btn-dark" do %>
          編集する
         <%end%>
        </div>
