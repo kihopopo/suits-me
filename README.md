@@ -40,10 +40,9 @@
 https://docs.google.com/spreadsheets/d/1Y-utJKBur0U9saoK6As-FzO73NP6FcXu/edit?usp=sharing&ouid=111023249530821206224&rtpof=true&sd=true
 
 ## 開発環境
-- OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- OS：MacOS
+- 言語：HTML,CSS,JavaScript,Ruby
 - フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
 - IDE：Cloud9
 
 ## 使用素材
