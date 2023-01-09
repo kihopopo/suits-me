@@ -9,19 +9,9 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <% if @post_image.favorited_by?(current_customer) %>
-          <p>
-           <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
-           ♥ いいね！ : <%= @post_image.favorites.count %>
-          <% end %>
-          </p>
-          <% else %>
-          <p>
-           <%= link_to post_image_favorites_path(@post_image), method: :post do %>
-           ♡ いいね！ : <%= @post_image.favorites.count %>
-          <% end %>
-          </p>
-          <% end %>
+          <div id="favorite_<%= @post_image.id %>">
+          <%= render 'favorite', post_image: @post_image %>
+          </div>
           <p><strong><%= @post_image.customer.username %></strong>　<%= @post_image.caption %></p>
         </div>
         <div class="col-md-6">
