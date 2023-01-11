@@ -1,9 +1,9 @@
-<% if @post_image.favorited_by?(current_customer) %>
+<% if post_image.favorited_by?(current_customer) %>
   <p>
-   <%= link_to 'いいね外す', post_image_favorites_path(@post_image), method: :delete, remote: true %><%= @post_image.favorites.count %>
+   <%= link_to 'いいね外す', post_image_favorites_path(post_image), method: :delete, remote: true %><%= post_image.favorites.count %>
   </p>
 <% else %>
   <p>
-   <%= link_to 'いいねする', post_image_favorites_path(@post_image), method: :post, remote: true %><%= @post_image.favorites.count %>
+   <%= link_to 'いいねする', post_image_favorites_path(post_image), method: :post, remote: true %><%= post_image.favorites.count %>
   </p>
 <% end %>
