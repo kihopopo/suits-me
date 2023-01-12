@@ -1,2 +1,2 @@
+<!--$("#favorite-<%#= @post_image.id %>").html("<%#= j(render: 'post_images/favorite', locals: { post_image: @post_image }) %>");-->
 document.getElementById('favorite_<%= @post_image.id %>').innerHTML = '<%= j(render @post_image) %>'
-<!--alert('いいねが押せている！');-->

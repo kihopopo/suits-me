@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     get '/orders/complete' => 'orders#complete'
     resources :orders
     resources :post_images do
-      resource :favorites, only: [:create, :destroy]
+      resource :favorites
     resources :post_comments, only: [:create, :destroy]
     end
   end
