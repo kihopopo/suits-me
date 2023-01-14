@@ -19,7 +19,7 @@ class PostImage < ApplicationRecord
   end
 
   def favorited_by?(customer)
-    favorites.exists?(customer_id: customer.id)
+    favorites.where(customer_id: customer.id).exists?
   end
 
 end

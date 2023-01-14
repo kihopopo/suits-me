@@ -9,7 +9,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-6">
-          <div id="favorite_<%= @post_image.id %>">
+          <div id=<%"favorite-" + @post_image.id.to_s %>>
           <%= render 'favorite', post_image: @post_image %>
           </div>
           <p><strong><%= @post_image.customer.username %></strong>　<%= @post_image.caption %></p>

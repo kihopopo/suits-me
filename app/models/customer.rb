@@ -3,8 +3,7 @@ class Customer < ApplicationRecord
  has_many :addresses
  has_many :cart_items
  has_many :orders
- has_many :post_images, dependent: :destroy
- has_many :post_images, dependent: :destroy
+ has_many :post_images
  has_many :post_comments, dependent: :destroy
  has_many :favorites, dependent: :destroy
  has_many :comments, dependent: :destroy
